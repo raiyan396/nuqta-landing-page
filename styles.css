@@ -1,0 +1,274 @@
+:root {
+  --nuqta-ink: #212121;
+  --nuqta-cream: #f5efe6;
+  --nuqta-mist: #b4b4b4;
+  --nuqta-amber: #c98c3a;
+  --nuqta-slate: #62707c;
+  --nuqta-panel: rgba(33, 33, 33, 0.72);
+  --nuqta-panel-soft: rgba(245, 239, 230, 0.1);
+  --nuqta-border: rgba(245, 239, 230, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--nuqta-cream);
+  background:
+    radial-gradient(circle at 68% 58%, rgba(242, 191, 78, 0.68), transparent 22%),
+    radial-gradient(circle at 18% 20%, rgba(176, 94, 36, 0.45), transparent 28%),
+    linear-gradient(145deg, #2a2624 0%, #554438 26%, #8e6540 48%, #707768 72%, #8993a5 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: soft-light;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, transparent 55%, rgba(16, 16, 16, 0.32) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.32));
+}
+
+a,
+button,
+summary {
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--nuqta-cream);
+  outline-offset: 3px;
+}
+
+.nuqta-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.nuqta-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5.4rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: var(--nuqta-ink);
+}
+
+.nuqta-logo--light {
+  color: var(--nuqta-cream);
+}
+
+.nuqta-mark {
+  color: var(--nuqta-cream);
+}
+
+.eyebrow {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.editorial-title {
+  font-family: "Source Serif 4", serif;
+  font-size: clamp(3rem, 7vw, 6.25rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.section-title {
+  font-family: "Source Serif 4", serif;
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+}
+
+.supporting-copy {
+  max-width: 42rem;
+  color: rgba(245, 239, 230, 0.84);
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0.7), rgba(33, 33, 33, 0.48));
+  border: 1px solid var(--nuqta-border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.glass-panel--light {
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.2), rgba(245, 239, 230, 0.08));
+}
+
+.card-grid > * {
+  height: 100%;
+}
+
+.pillar-card,
+.program-card,
+.quote-card,
+.support-card,
+.founder-card {
+  border: 1px solid var(--nuqta-border);
+  background: rgba(33, 33, 33, 0.56);
+  backdrop-filter: blur(12px);
+}
+
+.highlight-line {
+  color: var(--nuqta-cream);
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.soft-line {
+  border-color: rgba(245, 239, 230, 0.18);
+}
+
+.step-row {
+  position: relative;
+}
+
+.step-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.15rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(245, 239, 230, 0.1), rgba(245, 239, 230, 0.45), rgba(245, 239, 230, 0.1));
+}
+
+.step-item {
+  position: relative;
+}
+
+.step-item::before {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  left: 0;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  background: var(--nuqta-cream);
+  box-shadow: 0 0 0 8px rgba(245, 239, 230, 0.08);
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, rgba(245, 239, 230, 0.96), rgba(229, 212, 187, 0.9));
+  color: var(--nuqta-ink);
+}
+
+.gradient-button:hover,
+.gradient-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  background: rgba(245, 239, 230, 0.06);
+  border: 1px solid rgba(245, 239, 230, 0.24);
+  color: var(--nuqta-cream);
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  background: rgba(245, 239, 230, 0.12);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--nuqta-cream);
+  border-bottom: 1px solid rgba(245, 239, 230, 0.42);
+}
+
+.placeholder-photo {
+  background:
+    radial-gradient(circle at 50% 32%, rgba(245, 239, 230, 0.38), transparent 20%),
+    linear-gradient(180deg, rgba(245, 239, 230, 0.06), rgba(245, 239, 230, 0.02));
+}
+
+.page-section {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise-in 700ms ease forwards;
+}
+
+.page-section:nth-of-type(2) {
+  animation-delay: 90ms;
+}
+
+.page-section:nth-of-type(3) {
+  animation-delay: 140ms;
+}
+
+.page-section:nth-of-type(4) {
+  animation-delay: 200ms;
+}
+
+.page-section:nth-of-type(5) {
+  animation-delay: 260ms;
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .step-row::before {
+    left: 0.6rem;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+
+  .step-item::before {
+    top: 0.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  a,
+  button,
+  summary,
+  .page-section {
+    transition: none;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
