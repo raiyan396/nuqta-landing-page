@@ -165,63 +165,70 @@ summary:focus-visible {
   backdrop-filter: blur(12px);
 }
 
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .icon-badge {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 1.15rem;
-  border: 1px solid rgba(245, 239, 230, 0.22);
-  background:
-    radial-gradient(circle at top, rgba(245, 239, 230, 0.2), transparent 58%),
-    rgba(245, 239, 230, 0.08);
-  color: var(--nuqta-cream);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 1.1rem;
+  background: rgba(245, 239, 230, 0.88);
+  color: var(--nuqta-ink);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.12),
+    inset 0 -1px 0 rgba(33, 33, 33, 0.08);
+}
+
+.icon-badge::before {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border-radius: 0.75rem;
+  pointer-events: none;
 }
 
 .icon-badge svg {
-  width: 1.35rem;
-  height: 1.35rem;
-  stroke-width: 1.7;
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke-width: 2.1;
+}
+
+.pillar-label {
+  margin: 0.65rem 0 0;
+}
+
+.pillar-title,
+.ideal-title {
+  margin: 0;
+  line-height: 0.94;
+}
+
+.pillar-copy,
+.ideal-copy {
+  margin: 0.15rem 0 0;
+  max-width: 19rem;
 }
 
 .ideal-card {
   position: relative;
   overflow: hidden;
+  gap: 1rem;
 }
 
 .ideal-card::after {
   content: "";
   position: absolute;
-  inset: auto -10% -35% 35%;
-  height: 9rem;
-  background: radial-gradient(circle, rgba(230, 143, 78, 0.16), transparent 68%);
+  inset: auto -8% -38% 38%;
+  height: 10rem;
+  background: radial-gradient(circle, rgba(230, 143, 78, 0.18), transparent 68%);
   pointer-events: none;
-}
-
-.ideal-list {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.ideal-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  color: rgba(245, 239, 230, 0.8);
-}
-
-.ideal-list li svg {
-  width: 1rem;
-  height: 1rem;
-  margin-top: 0.2rem;
-  flex: 0 0 auto;
-  color: rgba(245, 239, 230, 0.72);
-  stroke-width: 1.9;
 }
 
 .highlight-line {
