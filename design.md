@@ -70,13 +70,14 @@ The implementation should therefore avoid treating event and program sections as
 
 ## 4. Site Map
 
-The site consists of four static HTML pages:
+The site consists of five static HTML entry points:
 
 ```text
 /index.html
-/about.html
-/program.html
-/support.html
+/about/index.html
+/program/index.html
+/support/index.html
+/connect/index.html
 /styles.css
 /assets/
   /logos/
@@ -85,7 +86,7 @@ The site consists of four static HTML pages:
 
 ### Page Purposes
 
-#### Home (`index.html`)
+#### Home (`/`)
 
 Purpose:
 - Introduce Nuqta quickly and emotionally
@@ -101,7 +102,7 @@ Sections:
 - Student journey
 - CTA band
 
-#### About (`about.html`)
+#### About (`/about/`)
 
 Purpose:
 - Expand the mission, vision, and positioning
@@ -118,7 +119,7 @@ Sections:
 - Credo
 - Founders and advisors
 
-#### Program (`program.html`)
+#### Program (`/program/`)
 
 Purpose:
 - Explain the operating model
@@ -135,7 +136,7 @@ Sections:
 - Partnership / bridge section
 - CTA to join
 
-#### Support (`support.html`)
+#### Support (`/support/`)
 
 Purpose:
 - Explain why support matters
