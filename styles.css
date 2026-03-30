@@ -379,34 +379,24 @@ summary:focus-visible {
 .problem-funnel::before {
   content: "";
   position: absolute;
-  inset: 8% 14% auto;
-  height: 55%;
-  background: linear-gradient(180deg, rgba(245, 239, 230, 0.06), transparent 85%);
-  clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
-  pointer-events: none;
-}
-
-.problem-funnel__rail {
-  position: absolute;
   left: 50%;
-  bottom: 12rem;
+  top: 2.5rem;
+  bottom: 8.5rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.14), rgba(245, 239, 230, 0.04) 72%, transparent);
   transform: translateX(-50%);
-  width: min(28rem, 78%);
-  height: 18rem;
-  background: linear-gradient(180deg, rgba(245, 239, 230, 0.06), transparent 82%);
-  clip-path: polygon(0 0, 100% 0, 56% 100%, 44% 100%);
-  opacity: 0.9;
+  pointer-events: none;
 }
 
 .problem-funnel__problems {
   position: relative;
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .problem-chip {
   position: relative;
-  width: min(26rem, 100%);
+  width: min(26rem, calc(50% - 2rem));
   padding: 1.1rem 1.15rem 1.2rem;
   border: 1px solid rgba(245, 239, 230, 0.18);
   border-radius: 1.6rem;
@@ -418,39 +408,70 @@ summary:focus-visible {
 .problem-chip::after {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: -0.95rem;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 1rem;
-  background: linear-gradient(180deg, rgba(245, 239, 230, 0.34), transparent);
+  top: 50%;
+  width: clamp(1.6rem, 4vw, 2.8rem);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(245, 239, 230, 0.28), rgba(245, 239, 230, 0.08));
+  transform: translateY(-50%);
 }
 
 .problem-chip--left {
   justify-self: start;
+  text-align: right;
 }
 
 .problem-chip--right {
   justify-self: end;
 }
 
-.problem-chip--wide {
-  width: min(30rem, 100%);
+.problem-chip--left::after {
+  right: calc(-1 * clamp(1.6rem, 4vw, 2.8rem));
 }
 
-.problem-chip--narrow {
-  width: min(23rem, 100%);
+.problem-chip--right::after {
+  left: calc(-1 * clamp(1.6rem, 4vw, 2.8rem));
+  background: linear-gradient(90deg, rgba(245, 239, 230, 0.08), rgba(245, 239, 230, 0.28));
 }
 
 .problem-chip--center {
   justify-self: center;
   width: min(22rem, 100%);
-  margin-top: 0.35rem;
+  margin-top: 0.55rem;
+  text-align: center;
 }
 
 .problem-chip--center::after {
-  height: 2rem;
-  bottom: -2rem;
+  left: 50%;
+  top: auto;
+  bottom: -2.4rem;
+  width: 1px;
+  height: 2.4rem;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.28), transparent);
+}
+
+.problem-chip--drift-1 {
+  width: min(29rem, calc(50% - 3.75rem));
+  margin-right: 4.5rem;
+}
+
+.problem-chip--drift-2 {
+  width: min(27rem, calc(50% - 3rem));
+  margin-left: 4rem;
+}
+
+.problem-chip--drift-3 {
+  width: min(24.5rem, calc(50% - 2.2rem));
+  margin-right: 3rem;
+}
+
+.problem-chip--drift-4 {
+  width: min(22rem, calc(50% - 1.4rem));
+  margin-left: 2.5rem;
+}
+
+.problem-chip--drift-5 {
+  width: min(19.5rem, 100%);
 }
 
 .point-reveal {
@@ -467,19 +488,17 @@ summary:focus-visible {
   height: 1.25rem;
   margin: 0 auto;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #fff6e2, var(--nuqta-amber) 58%, #8d5724 100%);
+  background: var(--nuqta-amber);
   box-shadow:
     0 0 0 18px rgba(201, 140, 58, 0.08),
-    0 0 72px rgba(201, 140, 58, 0.34);
+    0 0 36px rgba(201, 140, 58, 0.18);
 }
 
-.point-reveal__word {
-  margin: 1.4rem 0 0;
-  font-family: "Source Serif 4", serif;
-  font-size: clamp(2.6rem, 6vw, 4.8rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  color: var(--nuqta-cream);
+.point-reveal__logo {
+  display: block;
+  width: min(18rem, 62vw);
+  height: auto;
+  margin: 1.5rem auto 0;
 }
 
 .point-reveal__summary {
@@ -516,14 +535,8 @@ summary:focus-visible {
   }
 
   .problem-funnel::before {
-    inset: 18% 10% auto;
-    height: 48%;
-  }
-
-  .problem-funnel__rail {
-    bottom: 11rem;
-    width: 88%;
-    height: 15rem;
+    top: 2rem;
+    bottom: 7.5rem;
   }
 
   .problem-funnel__problems {
@@ -531,11 +544,29 @@ summary:focus-visible {
   }
 
   .problem-chip,
-  .problem-chip--wide,
-  .problem-chip--narrow,
+  .problem-chip--drift-1,
+  .problem-chip--drift-2,
+  .problem-chip--drift-3,
+  .problem-chip--drift-4,
   .problem-chip--center {
     justify-self: stretch;
     width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .problem-chip::after,
+  .problem-chip--left::after,
+  .problem-chip--right::after {
+    top: auto;
+    left: 50%;
+    right: auto;
+    bottom: -0.95rem;
+    width: 1px;
+    height: 1rem;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(245, 239, 230, 0.34), transparent);
   }
 
   .problem-chip--center {
@@ -546,8 +577,8 @@ summary:focus-visible {
     margin-top: 3.25rem;
   }
 
-  .point-reveal__word {
-    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  .point-reveal__logo {
+    width: min(15rem, 72vw);
   }
 
   .hero-logo {
