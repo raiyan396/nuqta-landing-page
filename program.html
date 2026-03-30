@@ -41,12 +41,12 @@
     <div class="nuqta-shell">
       <header class="sticky top-0 z-20">
         <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-          <div class="glass-panel rounded-full px-4 py-3 sm:px-6">
-            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <a href="index.html" class="flex items-end gap-1 text-3xl font-extrabold tracking-[-0.08em] text-cream">
-                <span>nuqta</span><span class="nuqta-mark">.</span>
+          <div class="glass-panel rounded-[2rem] px-4 py-3 sm:px-6 lg:rounded-full">
+            <div class="flex items-center justify-between gap-4">
+              <a href="index.html" class="inline-flex items-center">
+                <img src="assets/logos/nuqta-logo-white.svg" alt="Nuqta" class="h-8 w-auto sm:h-9" />
               </a>
-              <nav aria-label="Primary navigation" class="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-6">
+              <nav aria-label="Primary navigation" class="hidden lg:flex lg:items-center lg:gap-6">
                 <div class="flex flex-wrap gap-4 text-sm text-cream/72">
                   <a class="nav-link pb-1" href="index.html">Home</a>
                   <a class="nav-link pb-1" href="about.html">About</a>
@@ -59,27 +59,53 @@
                   >Join the community</a
                 >
               </nav>
+              <details class="relative lg:hidden">
+                <summary class="menu-summary ghost-button inline-flex cursor-pointer items-center justify-center rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.14em]">
+                  Menu
+                </summary>
+                <div class="menu-panel absolute right-0 mt-3 w-64 rounded-[1.5rem] p-4">
+                  <nav aria-label="Mobile navigation" class="flex flex-col gap-3 text-sm text-cream/80">
+                    <a class="nav-link pb-1" href="index.html">Home</a>
+                    <a class="nav-link pb-1" href="about.html">About</a>
+                    <a class="nav-link pb-1" href="program.html" aria-current="page">Program</a>
+                    <a class="nav-link pb-1" href="support.html">Support</a>
+                    <a
+                      href="JOIN_URL"
+                      class="gradient-button mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em]"
+                      >Join the community</a
+                    >
+                  </nav>
+                </div>
+              </details>
             </div>
           </div>
         </div>
       </header>
 
       <main>
-        <section class="page-section mx-auto max-w-7xl px-4 pb-10 pt-10 sm:px-6 lg:px-8 lg:pt-16">
-          <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <section class="page-section mx-auto max-w-7xl px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pt-16">
+          <div class="max-w-4xl space-y-6">
             <div>
               <p class="eyebrow text-cream/66">Program model</p>
-              <h1 class="editorial-title mt-5 max-w-4xl text-cream">A structure that turns isolated moments into sustained growth.</h1>
+              <h1 class="editorial-title mt-5 max-w-4xl text-cream">How Nuqta works.</h1>
             </div>
-            <div class="glass-panel rounded-[2rem] p-6 sm:p-8">
-              <p class="text-base leading-7 text-cream/82">
-                Nuqta's program model combines mentorship, suhbah, and leadership development through repeatable rhythms that can grow across schools, organizations, and communities.
-              </p>
+            <p class="max-w-2xl text-lg leading-8 text-cream/84">
+              A small number of repeatable rhythms create consistency, trust, and long-term growth.
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a href="#model" class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]">See the model</a>
+              <a href="#cadence" class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]">View events</a>
             </div>
           </div>
         </section>
 
         <section class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="quote-card rounded-[2rem] p-6 sm:p-8">
+            <p class="text-xl leading-8 text-cream/84 sm:text-2xl">Mentorship builds the foundation. Suhbah makes it sustainable. Leadership gives it direction.</p>
+          </div>
+        </section>
+
+        <section id="model" class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p class="eyebrow text-cream/66">2025-2026 program model</p>
@@ -141,7 +167,7 @@
           </div>
         </section>
 
-        <section class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <section id="cadence" class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p class="eyebrow text-cream/66">Events and cadence</p>
@@ -268,9 +294,7 @@
         <div class="glass-panel rounded-[2rem] px-6 py-8 sm:px-8">
           <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <div class="flex items-end gap-1 text-4xl font-extrabold tracking-[-0.08em] text-cream">
-                <span>nuqta</span><span class="nuqta-mark">.</span>
-              </div>
+              <img src="assets/logos/nuqta-logo-white.svg" alt="Nuqta" class="h-10 w-auto sm:h-12" />
               <p class="mt-4 max-w-xl text-base leading-7 text-cream/76">
                 A mentorship-driven ecosystem for Muslim youth, rooted in Prophetic character, companionship, and meaningful leadership development.
               </p>

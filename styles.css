@@ -21,11 +21,12 @@ body {
   margin: 0;
   color: var(--nuqta-cream);
   background:
-    radial-gradient(circle at 68% 58%, rgba(242, 191, 78, 0.68), transparent 22%),
-    radial-gradient(circle at 18% 20%, rgba(176, 94, 36, 0.45), transparent 28%),
-    linear-gradient(145deg, #2a2624 0%, #554438 26%, #8e6540 48%, #707768 72%, #8993a5 100%);
+    radial-gradient(circle at 28% 31%, rgba(218, 132, 63, 0.58), transparent 24%),
+    radial-gradient(circle at 50% 46%, rgba(168, 103, 68, 0.28), transparent 31%),
+    linear-gradient(155deg, #151311 0%, #332720 28%, #70503d 50%, #687061 76%, #758398 100%);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -33,12 +34,15 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.2;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 4px 4px;
-  mix-blend-mode: soft-light;
+  opacity: 0.58;
+  background:
+    repeating-radial-gradient(circle at 22% 18%, rgba(255, 246, 227, 0.18) 0 0.7px, transparent 0.7px 1.8px),
+    repeating-radial-gradient(circle at 74% 34%, rgba(8, 7, 6, 0.18) 0 0.8px, transparent 0.8px 2px),
+    repeating-radial-gradient(circle at 48% 76%, rgba(255, 255, 255, 0.08) 0 0.6px, transparent 0.6px 1.4px),
+    repeating-linear-gradient(0deg, rgba(255, 248, 232, 0.035) 0 1px, rgba(14, 11, 9, 0.035) 1px 2px);
+  background-size: 140px 140px, 120px 120px, 88px 88px, 3px 3px;
+  mix-blend-mode: overlay;
+  filter: contrast(185%) saturate(74%);
 }
 
 body::after {
@@ -47,8 +51,10 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at center, transparent 55%, rgba(16, 16, 16, 0.32) 100%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.32));
+    radial-gradient(circle at 28% 30%, rgba(227, 140, 72, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 46%, transparent 34%, rgba(9, 9, 9, 0.18) 68%, rgba(9, 9, 9, 0.62) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28) 72%, rgba(0, 0, 0, 0.46));
+  opacity: 0.97;
 }
 
 a,
@@ -72,6 +78,19 @@ summary:focus-visible {
 .nuqta-shell {
   position: relative;
   z-index: 1;
+}
+
+.nuqta-shell::before {
+  content: "";
+  position: fixed;
+  inset: -12%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 28% 29%, rgba(230, 143, 78, 0.14), transparent 25%),
+    radial-gradient(circle at 84% 92%, rgba(180, 194, 255, 0.12), transparent 24%);
+  filter: blur(64px) saturate(106%);
+  opacity: 0.88;
 }
 
 .nuqta-logo {
@@ -100,9 +119,10 @@ summary:focus-visible {
 
 .editorial-title {
   font-family: "Source Serif 4", serif;
-  font-size: clamp(3rem, 7vw, 6.25rem);
-  line-height: 0.92;
+  font-size: clamp(2.9rem, 6.4vw, 5.4rem);
+  line-height: 0.98;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .section-title {
@@ -121,6 +141,9 @@ summary:focus-visible {
   background: linear-gradient(180deg, rgba(33, 33, 33, 0.7), rgba(33, 33, 33, 0.48));
   border: 1px solid var(--nuqta-border);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
 
@@ -142,9 +165,86 @@ summary:focus-visible {
   backdrop-filter: blur(12px);
 }
 
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(245, 239, 230, 0.22);
+  background:
+    radial-gradient(circle at top, rgba(245, 239, 230, 0.2), transparent 58%),
+    rgba(245, 239, 230, 0.08);
+  color: var(--nuqta-cream);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.icon-badge svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  stroke-width: 1.7;
+}
+
+.ideal-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ideal-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -35% 35%;
+  height: 9rem;
+  background: radial-gradient(circle, rgba(230, 143, 78, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.ideal-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ideal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(245, 239, 230, 0.8);
+}
+
+.ideal-list li svg {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+  color: rgba(245, 239, 230, 0.72);
+  stroke-width: 1.9;
+}
+
 .highlight-line {
   color: var(--nuqta-cream);
   text-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.hero-logo {
+  height: auto;
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.18));
+}
+
+.hero-subheading {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: rgba(245, 239, 230, 0.94);
+}
+
+.hero-subheading span {
+  font-weight: 700;
 }
 
 .soft-line {
@@ -207,6 +307,20 @@ summary:focus-visible {
   border-bottom: 1px solid rgba(245, 239, 230, 0.42);
 }
 
+.menu-panel {
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0.92), rgba(33, 33, 33, 0.82));
+  border: 1px solid var(--nuqta-border);
+  backdrop-filter: blur(14px);
+}
+
+.menu-summary {
+  list-style: none;
+}
+
+.menu-summary::-webkit-details-marker {
+  display: none;
+}
+
 .placeholder-photo {
   background:
     radial-gradient(circle at 50% 32%, rgba(245, 239, 230, 0.38), transparent 20%),
@@ -235,6 +349,154 @@ summary:focus-visible {
   animation-delay: 260ms;
 }
 
+.about-hero {
+  position: relative;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% -1.5rem auto;
+  width: min(22rem, 38vw);
+  height: min(22rem, 38vw);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(201, 140, 58, 0.18), transparent 70%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.problem-funnel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--nuqta-border);
+  background:
+    radial-gradient(circle at top, rgba(245, 239, 230, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(33, 33, 33, 0.76), rgba(33, 33, 33, 0.52));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.22);
+  isolation: isolate;
+}
+
+.problem-funnel::before {
+  content: "";
+  position: absolute;
+  inset: 8% 14% auto;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.06), transparent 85%);
+  clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
+  pointer-events: none;
+}
+
+.problem-funnel__rail {
+  position: absolute;
+  left: 50%;
+  bottom: 12rem;
+  transform: translateX(-50%);
+  width: min(28rem, 78%);
+  height: 18rem;
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.06), transparent 82%);
+  clip-path: polygon(0 0, 100% 0, 56% 100%, 44% 100%);
+  opacity: 0.9;
+}
+
+.problem-funnel__problems {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.problem-chip {
+  position: relative;
+  width: min(26rem, 100%);
+  padding: 1.1rem 1.15rem 1.2rem;
+  border: 1px solid rgba(245, 239, 230, 0.18);
+  border-radius: 1.6rem;
+  background: rgba(245, 239, 230, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.problem-chip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.95rem;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 1rem;
+  background: linear-gradient(180deg, rgba(245, 239, 230, 0.34), transparent);
+}
+
+.problem-chip--left {
+  justify-self: start;
+}
+
+.problem-chip--right {
+  justify-self: end;
+}
+
+.problem-chip--wide {
+  width: min(30rem, 100%);
+}
+
+.problem-chip--narrow {
+  width: min(23rem, 100%);
+}
+
+.problem-chip--center {
+  justify-self: center;
+  width: min(22rem, 100%);
+  margin-top: 0.35rem;
+}
+
+.problem-chip--center::after {
+  height: 2rem;
+  bottom: -2rem;
+}
+
+.point-reveal {
+  position: relative;
+  z-index: 1;
+  margin: 4rem auto 0;
+  max-width: 34rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.point-reveal__dot {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff6e2, var(--nuqta-amber) 58%, #8d5724 100%);
+  box-shadow:
+    0 0 0 18px rgba(201, 140, 58, 0.08),
+    0 0 72px rgba(201, 140, 58, 0.34);
+}
+
+.point-reveal__word {
+  margin: 1.4rem 0 0;
+  font-family: "Source Serif 4", serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: var(--nuqta-cream);
+}
+
+.point-reveal__summary {
+  margin: 1rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(245, 239, 230, 0.88);
+}
+
+.point-reveal__support {
+  margin: 0.5rem auto 0;
+  max-width: 28rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(245, 239, 230, 0.66);
+}
+
 @keyframes rise-in {
   to {
     opacity: 1;
@@ -243,6 +505,59 @@ summary:focus-visible {
 }
 
 @media (max-width: 767px) {
+  .about-hero::after {
+    inset: auto 0 -2rem auto;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .problem-funnel {
+    padding-bottom: 2.5rem;
+  }
+
+  .problem-funnel::before {
+    inset: 18% 10% auto;
+    height: 48%;
+  }
+
+  .problem-funnel__rail {
+    bottom: 11rem;
+    width: 88%;
+    height: 15rem;
+  }
+
+  .problem-funnel__problems {
+    gap: 0.85rem;
+  }
+
+  .problem-chip,
+  .problem-chip--wide,
+  .problem-chip--narrow,
+  .problem-chip--center {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .problem-chip--center {
+    margin-top: 0;
+  }
+
+  .point-reveal {
+    margin-top: 3.25rem;
+  }
+
+  .point-reveal__word {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+  }
+
+  .hero-logo {
+    max-width: 18rem;
+  }
+
+  .hero-subheading {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+
   .step-row::before {
     left: 0.6rem;
     right: auto;
@@ -265,6 +580,7 @@ summary:focus-visible {
   a,
   button,
   summary,
+  body::before,
   .page-section {
     transition: none;
     animation: none;
