@@ -1142,6 +1142,29 @@ p.text-cream\/66 {
     line-height: 1.1;
 }
 
+/* About section photo background — fades in from black, fades out to deep crimson */
+.about-section-group {
+    position: relative;
+    isolation: isolate;
+}
+
+.about-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(10, 10, 10, 0.60) 0%,
+            rgba(10, 10, 10, 0.60) 100%
+        ),
+        url('assets/backgrounds/about-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
 @media (max-width: 767px) {
     .deck-band {
         border-radius: 1.35rem;
