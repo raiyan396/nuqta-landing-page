@@ -42,6 +42,7 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body class="home-page">
+        <div class="hero-photo-bg" aria-hidden="true"></div>
         <div class="nuqta-shell">
             <header class="site-header z-30">
                 <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
@@ -131,7 +132,7 @@
 
             <main>
                 <section
-                    class="page-section home-hero mx-auto flex min-h-[100svh] max-w-7xl items-center justify-start px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pb-16 lg:pt-16"
+                    class="page-section home-hero relative mx-auto flex min-h-[100svh] max-w-7xl items-center justify-start px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pb-16 lg:pt-16"
                 >
                     <div class="max-w-4xl space-y-7 home-hero__content">
                         <img
@@ -143,63 +144,52 @@
                             you were made for <span>more.</span>
                         </h1>
                     </div>
+                    <div class="hero-bottom">
+                        <p class="hero-blurb">
+                            BEGIN
+                        </p>
+                        <div class="hero-scroll-hint" aria-hidden="true">
+                            <svg class="hero-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
                 </section>
 
                 <section
                     class="page-section quote-bridge flex flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28"
                 >
                     <div class="mx-auto max-w-3xl space-y-8">
-                        <p class="eyebrow text-cream/50">
-                            Hadith — Bukhari &amp; Muslim
-                        </p>
-                        <p
-                            class="text-lg leading-relaxed text-cream/70 sm:text-xl"
-                        >
-                            The Messenger of Allah, peace and blessings be
-                            upon him, said,
-                        </p>
                         <blockquote
                             class="font-serif text-3xl font-bold leading-tight text-cream sm:text-4xl lg:text-5xl"
                         >
                             "...No doubt, every one of you is a shepherd and
                             is responsible for his flock."
                         </blockquote>
+                        <p class="eyebrow text-cream/50">
+                            PROPHET (SAW) — Bukhari &amp; Muslim
+                        </p>
                     </div>
                 </section>
 
                 <section
-                    class="page-section flex items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28"
+                    class="page-section context-section px-4 py-24 sm:px-6 lg:px-12 lg:py-40"
                 >
                     <div
-                        class="mx-auto flex w-full max-w-5xl flex-col items-center gap-6 sm:gap-8"
+                        class="mx-auto grid max-w-7xl items-center gap-y-10 lg:grid-cols-12 lg:gap-x-20"
                     >
-                        <p
-                            class="m-0 max-w-4xl text-balance font-serif text-3xl/tight font-extrabold tracking-tight text-cream sm:text-4xl/tight lg:text-5xl/tight"
-                        >
-                            We are a mentorship-based initiative focused on
-                            Muslim youth, addressing the gap in support during
-                            a critical stage of growth in their lives.
-                        </p>
-                        <p
-                            class="m-0 max-w-3xl text-balance text-xl/relaxed font-medium text-cream/80 sm:text-2xl/relaxed"
-                        >
-                            We build confident, grounded leaders through
-                            consistent mentorship, suhbah, and leadership
-                            development.
-                        </p>
-                        <div
-                            class="mt-4 flex w-full flex-col justify-center gap-4 sm:mt-6 sm:w-auto sm:flex-row"
-                        >
-                            <a
-                                href="#about"
-                                class="gradient-button inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] sm:min-w-[15rem] sm:w-auto"
-                                >Learn more</a
-                            >
-                            <a
-                                href="connect/"
-                                class="ghost-button inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] sm:min-w-[15rem] sm:w-auto"
-                                >Join the community</a
-                            >
+                        <div class="lg:col-span-7">
+                            <p class="eyebrow text-cream/55 mb-4">Mission</p>
+                            <h2 class="context-heading">
+                                Removing the gap in support during our youth's critical
+                                stage of growth.
+                            </h2>
+                        </div>
+                        <div class="context-right lg:col-span-5">
+                            <p class="context-body">
+                                We are a mentorship-based initiative focused on
+                                Muslim youth, closing the gap in mentorship, structure, and community so leaders can emerge.
+                            </p>
                         </div>
                     </div>
                 </section>
