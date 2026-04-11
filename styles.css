@@ -20,25 +20,7 @@ html {
 body {
     margin: 0;
     color: var(--nuqta-cream);
-    background:
-        radial-gradient(
-            circle at 28% 31%,
-            rgba(218, 132, 63, 0.58),
-            transparent 24%
-        ),
-        radial-gradient(
-            circle at 50% 46%,
-            rgba(168, 103, 68, 0.28),
-            transparent 31%
-        ),
-        linear-gradient(
-            155deg,
-            #151311 0%,
-            #332720 28%,
-            #70503d 50%,
-            #687061 76%,
-            #758398 100%
-        );
+    background: #0a0a0a;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -80,30 +62,27 @@ body::before {
     filter: contrast(185%) saturate(74%);
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(
-            circle at 28% 30%,
-            rgba(227, 140, 72, 0.22),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 46%,
-            transparent 34%,
-            rgba(9, 9, 9, 0.18) 68%,
-            rgba(9, 9, 9, 0.62) 100%
-        ),
+/* hero photo background — sits behind nuqta-shell */
+.hero-photo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(100vh + 32rem);
+    z-index: 0;
+    background-image:
         linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.12),
-            rgba(0, 0, 0, 0.28) 72%,
-            rgba(0, 0, 0, 0.46)
-        );
-    opacity: 0.97;
+            to bottom,
+            rgba(0, 0, 0, 0.18) 0%,
+            rgba(0, 0, 0, 0.22) 35%,
+            rgba(10, 10, 10, 0.88) 68%,
+            #0a0a0a 82%
+        ),
+        url('assets/backgrounds/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
 a,
@@ -135,24 +114,7 @@ summary:focus-visible {
 }
 
 .nuqta-shell::before {
-    content: "";
-    position: fixed;
-    inset: -12%;
-    pointer-events: none;
-    z-index: 0;
-    background:
-        radial-gradient(
-            circle at 28% 29%,
-            rgba(230, 143, 78, 0.14),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 84% 92%,
-            rgba(180, 194, 255, 0.12),
-            transparent 24%
-        );
-    filter: blur(64px) saturate(106%);
-    opacity: 0.88;
+    display: none;
 }
 
 .nuqta-logo {
@@ -328,6 +290,43 @@ summary:focus-visible {
 
 .hero-subheading span {
     font-weight: 800;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    width: min(38rem, 90vw);
+}
+
+.hero-blurb {
+    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    line-height: 1.85;
+    color: rgba(245, 239, 230, 0.55);
+    margin: 0;
+}
+
+.hero-scroll-hint {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-arrow {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: rgba(245, 239, 230, 0.4);
+    animation: arrow-bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(6px); opacity: 0.8; }
 }
 
 .home-hero {
@@ -764,6 +763,54 @@ summary:focus-visible {
         transition: none;
         transform: none;
         opacity: 1;
+    }
+}
+
+.context-section {
+    position: relative;
+    background: #0a0a0a;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.context-section::before {
+    display: none;
+}
+
+.context-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+.context-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4.8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #e7e5e4;
+    margin: 0;
+}
+
+.context-right {
+    border-left: 1px solid rgba(72, 72, 72, 0.45);
+    padding-left: 3rem;
+}
+
+.context-body {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(172, 171, 170, 0.9);
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .context-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(72, 72, 72, 0.45);
+        padding-top: 2rem;
     }
 }
 
