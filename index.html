@@ -67,7 +67,7 @@
                                         aria-current="page"
                                         >Home</a
                                     >
-                                    <a class="nav-link pb-1" href="#about"
+                                    <a class="nav-link pb-1" href="index.html#about"
                                         >About</a
                                     >
                                     <a class="nav-link pb-1" href="support/"
@@ -99,7 +99,7 @@
                                             aria-current="page"
                                             >Home</a
                                         >
-                                        <a class="nav-link pb-1" href="#about"
+                                        <a class="nav-link pb-1" href="index.html#about"
                                             >About</a
                                         >
                                         <a class="nav-link pb-1" href="support/"
@@ -181,12 +181,11 @@
                     </div>
                 </section>
                 <!-- Problem + Solution group with its own photo background -->
-                <div class="problem-solution-group pb-20 lg:pb-24">
+                <div id="about" class="problem-solution-group pb-20 lg:pb-24">
                 <div class="problem-solution-bg" aria-hidden="true"></div>
 
                 <!-- About: anchor + opening statement -->
                 <section
-                    id="about"
                     class="page-section mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
                 >
                     <div class="max-w-5xl space-y-6">
@@ -424,7 +423,7 @@
                                     class="mt-4 flex flex-col gap-3 text-sm text-cream/76"
                                 >
                                     <a href="./">Home</a>
-                                    <a href="#about">About</a>
+                                    <a href="index.html#about">About</a>
                                     <a href="program/">Program</a>
                                     <a href="support/">Support</a>
                                 </div>
@@ -473,6 +472,58 @@
             document
                 .querySelectorAll(".page-section")
                 .forEach((el) => observer.observe(el));
+
+            const aboutAnchor = document.getElementById("about");
+            const header = document.querySelector(".site-header");
+            const navLinks = Array.from(
+                document.querySelectorAll(".site-header .nav-link"),
+            );
+            const homeLinks = navLinks.filter((link) => {
+                const href = link.getAttribute("href");
+                return href === "./" || href === "index.html";
+            });
+            const aboutLinks = navLinks.filter((link) =>
+                (link.getAttribute("href") || "").includes("#about"),
+            );
+
+            const setCurrentNav = (section) => {
+                homeLinks.forEach((link) => {
+                    if (section === "home") {
+                        link.setAttribute("aria-current", "page");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+                aboutLinks.forEach((link) => {
+                    if (section === "about") {
+                        link.setAttribute("aria-current", "page");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+            };
+
+            const updateCurrentSection = () => {
+                if (!aboutAnchor) return;
+                const headerOffset = header ? header.offsetHeight + 12 : 0;
+                const aboutTop =
+                    aboutAnchor.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerOffset;
+                if (window.scrollY >= aboutTop) {
+                    setCurrentNav("about");
+                } else {
+                    setCurrentNav("home");
+                }
+            };
+
+            window.addEventListener("scroll", updateCurrentSection, {
+                passive: true,
+            });
+            window.addEventListener("resize", updateCurrentSection);
+            window.addEventListener("hashchange", updateCurrentSection);
+            window.addEventListener("load", updateCurrentSection);
+            updateCurrentSection();
         </script>
     </body>
 </html>
