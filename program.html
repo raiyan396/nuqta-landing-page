@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuqta Program | How the model works</title>
+    <meta
+      name="description"
+      content="See how Nuqta's program model uses mentorship, community, and leadership development to build sustained youth growth."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#212121",
+              cream: "#f5efe6",
+              mist: "#b4b4b4",
+              amber: "#c98c3a",
+              slate: "#62707c",
+            },
+            fontFamily: {
+              sans: ["Poppins", "system-ui", "sans-serif"],
+              serif: ["Source Serif 4", "Georgia", "serif"],
+              mono: ["Anonymous Pro", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="nuqta-shell">
+      <header class="sticky top-0 z-20">
+        <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div class="glass-panel rounded-[2rem] px-4 py-3 sm:px-6 lg:rounded-full">
+            <div class="flex items-center justify-between gap-4">
+              <a href="index.html" class="inline-flex items-center">
+                <img src="assets/logos/nuqta-logo-white.svg" alt="Nuqta" class="h-8 w-auto sm:h-9" />
+              </a>
+              <nav aria-label="Primary navigation" class="hidden lg:flex lg:items-center lg:gap-6">
+                <div class="flex flex-wrap gap-4 text-sm text-cream/72">
+                  <a class="nav-link pb-1" href="index.html">Home</a>
+                  <a class="nav-link pb-1" href="index.html#about">About</a>
+                  <a class="nav-link pb-1" href="support.html">Support</a>
+                </div>
+                <a
+                  href="connect.html"
+                  class="gradient-button inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em] lg:w-auto"
+                  >Join the community</a
+                >
+              </nav>
+              <details class="relative lg:hidden">
+                <summary class="menu-summary ghost-button inline-flex cursor-pointer items-center justify-center rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.14em]">
+                  Menu
+                </summary>
+                <div class="menu-panel absolute right-0 mt-3 w-64 rounded-[1.5rem] p-4">
+                  <nav aria-label="Mobile navigation" class="flex flex-col gap-3 text-sm text-cream/80">
+                    <a class="nav-link pb-1" href="index.html">Home</a>
+                    <a class="nav-link pb-1" href="index.html#about">About</a>
+                    <a class="nav-link pb-1" href="support.html">Support</a>
+                    <a
+                      href="connect.html"
+                      class="gradient-button mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em]"
+                      >Join the community</a
+                    >
+                  </nav>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-section mx-auto max-w-7xl px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pt-16">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div class="max-w-4xl space-y-6">
+              <div>
+                <p class="eyebrow text-cream/66">Program</p>
+                <h1 class="editorial-title mt-5 max-w-4xl text-cream">What Nuqta provides.</h1>
+              </div>
+              <p class="max-w-2xl text-lg leading-8 text-cream/84">
+                Nuqta gives Muslim students a consistent rhythm of mentorship, training, campus presence, and service so growth does not depend on one-off events.
+              </p>
+              <div class="flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="#model"
+                  class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                  >See the program</a
+                >
+                <a
+                  href="#cadence"
+                  class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                  >View the cadence</a
+                >
+              </div>
+            </div>
+            <article class="quote-card rounded-[2rem] p-7 sm:p-9">
+              <p class="eyebrow text-cream/58">In practice</p>
+              <p class="mt-4 text-xl leading-8 text-cream/84 sm:text-2xl">
+                We stay close to students, build leaders over time, and keep their growth connected to real community responsibility.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="model" class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="eyebrow text-cream/66">Program model</p>
+              <h2 class="section-title mt-4 text-cream">A simple structure, repeated consistently.</h2>
+            </div>
+            <p class="supporting-copy max-w-xl text-base leading-7">
+              Each part has a clear job. Together they create continuity instead of disconnected programming.
+            </p>
+          </div>
+
+          <div class="glass-panel mt-8 overflow-hidden rounded-[2rem]">
+            <article class="grid gap-5 border-b border-cream/10 px-6 py-7 sm:px-8 lg:grid-cols-[auto_0.7fr_1fr] lg:items-start lg:gap-8">
+              <div class="icon-badge">
+                <i data-lucide="users" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/54">01</p>
+                <h3 class="mt-3 font-serif text-3xl text-cream">Mentorship and formation</h3>
+              </div>
+              <p class="text-base leading-7 text-cream/80">
+                Ongoing mentorship and tarbiya help students build identity, spiritual grounding, and trust with people who stay present.
+              </p>
+            </article>
+
+            <article class="grid gap-5 border-b border-cream/10 px-6 py-7 sm:px-8 lg:grid-cols-[auto_0.7fr_1fr] lg:items-start lg:gap-8">
+              <div class="icon-badge">
+                <i data-lucide="graduation-cap" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/54">02</p>
+                <h3 class="mt-3 font-serif text-3xl text-cream">Leadership training</h3>
+              </div>
+              <p class="text-base leading-7 text-cream/80">
+                Bi-weekly workshops equip MSA board members and student organizers with the skills, coaching, and structure needed to lead well.
+              </p>
+            </article>
+
+            <article class="grid gap-5 border-b border-cream/10 px-6 py-7 sm:px-8 lg:grid-cols-[auto_0.7fr_1fr] lg:items-start lg:gap-8">
+              <div class="icon-badge">
+                <i data-lucide="map-pinned" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/54">03</p>
+                <h3 class="mt-3 font-serif text-3xl text-cream">Campus presence</h3>
+              </div>
+              <p class="text-base leading-7 text-cream/80">
+                School visits and direct support keep Nuqta close to student realities and make the relationship more than an event invitation.
+              </p>
+            </article>
+
+            <article class="grid gap-5 px-6 py-7 sm:px-8 lg:grid-cols-[auto_0.7fr_1fr] lg:items-start lg:gap-8">
+              <div class="icon-badge">
+                <i data-lucide="heart" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/54">04</p>
+                <h3 class="mt-3 font-serif text-3xl text-cream">Service in community</h3>
+              </div>
+              <p class="text-base leading-7 text-cream/80">
+                Students put leadership into action through service, learning to contribute with sincerity, responsibility, and khidmah.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <p class="eyebrow text-cream/66">What students move toward</p>
+              <h2 class="section-title mt-4 text-cream">From attendance to responsibility.</h2>
+              <p class="mt-5 max-w-xl text-base leading-7 text-cream/78">
+                The goal is not just participation. The goal is students who are formed, trusted, and ready to serve their communities well.
+              </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <article class="pillar-card rounded-[1.75rem] p-6">
+                <div class="icon-badge">
+                  <i data-lucide="message-circle" aria-hidden="true"></i>
+                </div>
+                <h3 class="mt-4 font-serif text-3xl text-cream">Belong</h3>
+                <p class="mt-3 text-base leading-7 text-cream/80">Students find consistent people, credible spaces, and a reason to stay connected.</p>
+              </article>
+              <article class="pillar-card rounded-[1.75rem] p-6">
+                <div class="icon-badge">
+                  <i data-lucide="leaf" aria-hidden="true"></i>
+                </div>
+                <h3 class="mt-4 font-serif text-3xl text-cream">Grow</h3>
+                <p class="mt-3 text-base leading-7 text-cream/80">They build spiritual habits, confidence, and leadership capacity over time.</p>
+              </article>
+              <article class="pillar-card rounded-[1.75rem] p-6">
+                <div class="icon-badge">
+                  <i data-lucide="flag" aria-hidden="true"></i>
+                </div>
+                <h3 class="mt-4 font-serif text-3xl text-cream">Lead</h3>
+                <p class="mt-3 text-base leading-7 text-cream/80">They step into service, campus leadership, and meaningful contribution with support behind them.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="cadence" class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p class="eyebrow text-cream/66">Cadence</p>
+              <h2 class="section-title mt-4 text-cream">The work stays visible because it stays regular.</h2>
+              <p class="mt-5 max-w-xl text-base leading-7 text-cream/78">
+                Nuqta runs on a repeatable rhythm. Students know when to return, leaders know where to grow, and communities can see the work taking shape.
+              </p>
+            </div>
+            <div class="glass-panel rounded-[2rem] p-6 sm:p-8">
+              <div class="space-y-6">
+                <article class="flex gap-4 border-b border-cream/10 pb-6">
+                  <div class="icon-badge h-14 w-14 shrink-0 rounded-[1.2rem]">
+                    <i data-lucide="calendar-days" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="eyebrow text-cream/56">Monthly</p>
+                    <h3 class="mt-2 font-serif text-2xl text-cream">Major community gathering</h3>
+                    <p class="mt-3 text-sm leading-6 text-cream/74">A visible touchpoint that brings students, mentors, and the wider community into the same room.</p>
+                  </div>
+                </article>
+                <article class="flex gap-4 border-b border-cream/10 pb-6">
+                  <div class="icon-badge h-14 w-14 shrink-0 rounded-[1.2rem]">
+                    <i data-lucide="book-open" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="eyebrow text-cream/56">Bi-weekly</p>
+                    <h3 class="mt-2 font-serif text-2xl text-cream">Leadership training</h3>
+                    <p class="mt-3 text-sm leading-6 text-cream/74">Focused sessions for student leaders who need practical development, not just inspiration.</p>
+                  </div>
+                </article>
+                <article class="flex gap-4 border-b border-cream/10 pb-6">
+                  <div class="icon-badge h-14 w-14 shrink-0 rounded-[1.2rem]">
+                    <i data-lucide="building-2" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="eyebrow text-cream/56">Ongoing</p>
+                    <h3 class="mt-2 font-serif text-2xl text-cream">MSA visits and support</h3>
+                    <p class="mt-3 text-sm leading-6 text-cream/74">Direct presence on campuses keeps the relationship personal and responsive.</p>
+                  </div>
+                </article>
+                <article class="flex gap-4">
+                  <div class="icon-badge h-14 w-14 shrink-0 rounded-[1.2rem]">
+                    <i data-lucide="heart" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="eyebrow text-cream/56">Annual</p>
+                    <h3 class="mt-2 font-serif text-2xl text-cream">Service project</h3>
+                    <p class="mt-3 text-sm leading-6 text-cream/74">A shared act of khidmah that turns leadership formation into real benefit for the community.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-5 lg:grid-cols-2">
+            <article class="glass-panel rounded-[2rem] p-7 sm:p-9">
+              <p class="eyebrow text-cream/56">Partnership</p>
+              <h2 class="mt-4 font-serif text-4xl text-cream">Built to strengthen local communities.</h2>
+              <p class="mt-5 text-base leading-7 text-cream/82">
+                Nuqta supports students in a focused way while staying aligned with masajid, mentors, and institutions that want stronger long-term youth development.
+              </p>
+            </article>
+            <article class="glass-panel glass-panel--light rounded-[2rem] p-7 sm:p-9">
+              <p class="eyebrow text-cream/56">Next step</p>
+              <h2 class="mt-4 font-serif text-4xl text-cream">Bring the program into your community.</h2>
+              <p class="mt-5 text-base leading-7 text-cream/82">
+                If you are a student leader, mentor, or institution, connect with Nuqta and help build a more consistent path for Muslim youth.
+              </p>
+              <a
+                href="connect.html"
+                class="gradient-button mt-8 inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                >Join the community</a
+              >
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+        <div class="glass-panel rounded-[2rem] px-6 py-8 sm:px-8">
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <img src="assets/logos/nuqta-logo-white.svg" alt="Nuqta" class="h-10 w-auto sm:h-12" />
+              <p class="mt-4 max-w-xl text-base leading-7 text-cream/76">
+                A mentorship-driven ecosystem for Muslim youth, rooted in Prophetic character, companionship, and meaningful leadership development.
+              </p>
+            </div>
+            <div class="grid gap-8 sm:grid-cols-3">
+              <div>
+                <p class="eyebrow text-cream/58">Navigate</p>
+                <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
+                  <a href="index.html">Home</a>
+                  <a href="index.html#about">About</a>
+                  <a href="program.html">Program</a>
+                  <a href="support.html">Support</a>
+                </div>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/58">Connect</p>
+                <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
+                  <a href="connect.html">Join</a>
+                  <a href="support.html">Support</a>
+                  <a href="https://www.instagram.com/nuqta.youth/" target="_blank" rel="noreferrer">Instagram</a>
+                </div>
+              </div>
+              <div>
+                <p class="eyebrow text-cream/58">Contact</p>
+                <div class="mt-4 space-y-3 text-sm text-cream/76">
+                  <p>EMAIL_ADDRESS</p>
+                  <p>Est. 2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
