@@ -85,6 +85,42 @@ body::before {
     pointer-events: none;
 }
 
+/* support page photo background scaffold */
+.support-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.62) 45%,
+        #0a0a0a 100%
+    );
+    /* Add support page image later, e.g. url('assets/backgrounds/support-bg.jpg') */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* join community page photo background scaffold */
+.connect-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.38) 0%,
+        rgba(0, 0, 0, 0.58) 42%,
+        #0a0a0a 100%
+    );
+    /* Add community page image later, e.g. url('assets/backgrounds/community-bg.jpg') */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
 a,
 button,
 summary {
@@ -866,6 +902,8 @@ body {
     font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.14em;
+    font-size: clamp(1.02rem, 1.1vw, 1.16rem);
+    line-height: 1.2;
     color: var(--text-light-700);
 }
 
@@ -1072,35 +1110,86 @@ p.text-cream\/66 {
 }
 
 .vision-card {
-    border: 1px solid var(--panel-border-dark);
+    border: 0;
     background: #111111;
     border-radius: 1.5rem;
     padding: 1.35rem 1.25rem;
 }
 
+.vision-headline {
+    margin: clamp(1.2rem, 3.4vw, 2.7rem) auto 0;
+    max-width: 24ch;
+    text-align: center;
+    color: #f3efe6;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.85vw, 4.1rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: 0.005em;
+    text-wrap: balance;
+}
+
+.vision-headline strong {
+    font-weight: 800;
+}
+
+.vision-points-grid {
+    margin-top: clamp(2.8rem, 6vw, 5.2rem);
+    display: grid;
+    gap: clamp(2rem, 3vw, 3.8rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.vision-point {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
 .vision-number {
     margin: 0;
-    color: #f6f4f1;
+    color: #141414;
     font-family: var(--font-heading);
-    font-size: clamp(2.6rem, 4.8vw, 5rem);
+    font-size: clamp(4rem, 7vw, 7rem);
     font-weight: 800;
     line-height: 1;
 }
 
 .vision-title {
-    margin: 0.35rem 0 0;
-    color: #f6f4f1;
+    margin: 0.65rem 0 0;
+    color: #171717;
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: clamp(1.6rem, 1.7vw, 2rem);
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.035em;
 }
 
 .vision-copy {
-    margin: 0.8rem 0 0;
-    color: rgba(245, 239, 230, 0.95);
-    font-size: 1.05rem;
-    line-height: 1.5;
+    margin: 1.4rem 0 0;
+    color: #f3efe6;
+    font-family: var(--font-mono);
+    font-size: clamp(1.45rem, 1.8vw, 2rem);
+    font-weight: 400;
+    line-height: 1.42;
+    letter-spacing: 0.01em;
+}
+
+.vision-copy strong {
+    font-weight: 700;
+}
+
+@media (max-width: 1023px) {
+    .vision-points-grid {
+        grid-template-columns: 1fr;
+        gap: 2.6rem;
+    }
+
+    .vision-headline {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .program-pill {
@@ -1293,6 +1382,32 @@ p.text-cream\/66 {
     background-position: center center;
     background-repeat: no-repeat;
     pointer-events: none;
+}
+
+/* Vision + Mission section photo background */
+.vision-mission-group {
+    position: relative;
+    isolation: isolate;
+}
+
+.vision-mission-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('assets/backgrounds/vision-mission-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.vision-mission-section {
+    background: transparent;
+    border: 0;
+}
+
+.nuqta-is-section {
+    border: 0;
 }
 
 @media (max-width: 767px) {
