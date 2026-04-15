@@ -14,6 +14,10 @@
             href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://fonts.cdnfonts.com/css/open-sauce-one"
+            rel="stylesheet"
+        />
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -37,18 +41,13 @@
         </script>
         <link rel="stylesheet" href="styles.css" />
     </head>
-    <body>
+    <body class="home-page">
+        <div class="hero-photo-bg" aria-hidden="true"></div>
         <div class="nuqta-shell">
-            <header class="sticky top-0 z-20">
-                <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-                    <div
-                        class="glass-panel rounded-[2rem] px-4 py-3 sm:px-6 lg:rounded-full"
-                    >
+            <header class="site-header z-30 bg-ink">
+                <div class="px-4 py-4 sm:px-6 lg:px-8">
                         <div class="flex items-center justify-between gap-4">
-                            <a
-                                href="./"
-                                class="inline-flex items-center"
-                            >
+                            <a href="./" class="inline-flex items-center">
                                 <img
                                     src="assets/logos/nuqta-logo-white.svg"
                                     alt="Nuqta"
@@ -68,17 +67,11 @@
                                         aria-current="page"
                                         >Home</a
                                     >
-                                    <a class="nav-link pb-1" href="about/"
+                                    <a class="nav-link pb-1" href="index.html#about"
                                         >About</a
-                                    >
-                                    <a class="nav-link pb-1" href="program/"
-                                        >Program</a
                                     >
                                     <a class="nav-link pb-1" href="support/"
                                         >Support</a
-                                    >
-                                    <a class="nav-link pb-1" href="connect/"
-                                        >Connect</a
                                     >
                                 </div>
                                 <a
@@ -106,19 +99,10 @@
                                             aria-current="page"
                                             >Home</a
                                         >
-                                        <a
-                                            class="nav-link pb-1"
-                                            href="about/"
+                                        <a class="nav-link pb-1" href="index.html#about"
                                             >About</a
                                         >
-                                        <a
-                                            class="nav-link pb-1"
-                                            href="program/"
-                                            >Program</a
-                                        >
-                                        <a
-                                            class="nav-link pb-1"
-                                            href="support/"
+                                        <a class="nav-link pb-1" href="support/"
                                             >Support</a
                                         >
                                         <a
@@ -130,220 +114,293 @@
                                 </div>
                             </details>
                         </div>
-                    </div>
                 </div>
             </header>
 
             <main>
                 <section
-                    class="page-section mx-auto flex min-h-[72vh] max-w-7xl items-center px-4 pb-14 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16"
+                    class="page-section home-hero relative mx-auto flex min-h-[100svh] max-w-7xl items-center justify-start px-4 pb-12 pt-10 sm:px-6 lg:px-8 lg:pb-16 lg:pt-16"
                 >
-                    <div class="max-w-5xl space-y-8">
-                        <p class="eyebrow text-cream/70">
-                            Est. 2026 · Mentorship-driven ecosystem
+                    <div class="max-w-4xl space-y-7 home-hero__content">
+                        <img
+                            src="assets/logos/nuqta-logo.svg"
+                            alt="Nuqta"
+                            class="hero-logo max-w-[24rem]"
+                        />
+                        <h1 class="hero-subheading max-w-3xl text-left">
+                            you were made for <span>more.</span>
+                        </h1>
+                    </div>
+                    <div class="hero-bottom">
+                        <p class="hero-blurb">
+                            BEGIN
                         </p>
-                        <div class="space-y-5">
-                            <img
-                                src="assets/logos/nuqta-logo.svg"
-                                alt="Nuqta"
-                                class="hero-logo max-w-[24rem]"
-                            />
-                            <h1 class="hero-subheading max-w-4xl">
-                                you were made for <span>more.</span>
-                            </h1>
-                            <p
-                                class="max-w-2xl text-lg leading-8 text-cream/84 sm:text-xl"
-                            >
-                                Returning to the point where identity is awakened,
-                                purpose is realized, and conviction is reached.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-4 sm:flex-row">
-                            <a
-                                href="connect/"
-                                class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
-                                >Join the community</a
-                            >
-                            <a
-                                href="about/"
-                                class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
-                                >Read the vision</a
-                            >
+                        <div class="hero-scroll-hint" aria-hidden="true">
+                            <svg class="hero-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </div>
                     </div>
                 </section>
 
                 <section
-                    class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+                    class="page-section quote-bridge flex flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28"
                 >
-                    <div
-                        class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end"
-                    >
-                        <div>
-                            <p class="eyebrow text-cream/66">The point</p>
-                            <h2 class="section-title mt-4 max-w-xl text-cream">
-                                Mentorship. Suhbah. Leadership.
-                            </h2>
-                        </div>
-                        <p class="max-w-2xl text-lg leading-8 text-cream/80">
-                            Nuqta creates consistent spaces where Muslim youth
-                            can be grounded in faith, strengthened in character,
-                            and prepared to lead with integrity.
+                    <div class="mx-auto max-w-3xl space-y-8">
+                        <blockquote
+                            class="font-serif text-3xl font-bold leading-tight text-cream sm:text-4xl lg:text-5xl"
+                        >
+                            "...No doubt, every one of you is a shepherd and
+                            is responsible for his flock."
+                        </blockquote>
+                        <p class="eyebrow text-cream/50">
+                            PROPHET (SAW) — Bukhari &amp; Muslim
                         </p>
-                    </div>
-                    <div class="card-grid mt-8 grid gap-5 md:grid-cols-3">
-                        <article class="pillar-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="book-open" aria-hidden="true"></i>
-                            </div>
-                            <p class="pillar-label eyebrow text-cream/54">01 · Tarbiya</p>
-                            <h3 class="pillar-title font-serif text-3xl text-cream">
-                                Mentorship
-                            </h3>
-                            <p class="pillar-copy text-base leading-7 text-cream/78">
-                                Consistent guidance that shapes identity and
-                                conviction.
-                            </p>
-                        </article>
-                        <article class="pillar-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="users" aria-hidden="true"></i>
-                            </div>
-                            <p class="pillar-label eyebrow text-cream/54">02 · Suhbah</p>
-                            <h3 class="pillar-title font-serif text-3xl text-cream">
-                                Community
-                            </h3>
-                            <p class="pillar-copy text-base leading-7 text-cream/78">
-                                Meaningful companionship and spaces where youth
-                                belong.
-                            </p>
-                        </article>
-                        <article class="pillar-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="flag" aria-hidden="true"></i>
-                            </div>
-                            <p class="pillar-label eyebrow text-cream/54">03 · Leadership</p>
-                            <h3 class="pillar-title font-serif text-3xl text-cream">
-                                Development
-                            </h3>
-                            <p class="pillar-copy text-base leading-7 text-cream/78">
-                                Formation that prepares students to serve and
-                                lead well.
-                            </p>
-                        </article>
                     </div>
                 </section>
 
                 <section
-                    class="page-section mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+                    class="page-section context-section px-4 py-24 sm:px-6 lg:px-12 lg:py-40"
                 >
                     <div
-                        class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+                        class="mx-auto grid max-w-7xl items-center gap-y-10 lg:grid-cols-12 lg:gap-x-20"
                     >
-                        <div>
-                            <p class="eyebrow text-cream/66">Our ideals</p>
-                            <h2 class="section-title mt-4 max-w-2xl text-cream">
-                                The convictions at the center of Nuqta.
+                        <div class="lg:col-span-7">
+                            <p class="eyebrow text-cream/55 mb-4">Mission</p>
+                            <h2 class="context-heading">
+                                Removing the gap in support during our youth's critical
+                                stage of growth.
                             </h2>
                         </div>
-                        <p class="max-w-2xl text-base leading-7 text-cream/78">
-                            Home should carry the heart of the work: what we are
-                            rooted in, what we are building toward, and who this
-                            is for.
-                        </p>
+                        <div class="context-right lg:col-span-5">
+                            <p class="context-body">
+                                We are a mentorship-based initiative focused on
+                                Muslim youth, closing the gap in mentorship, structure, and community so leaders can emerge.
+                            </p>
+                        </div>
                     </div>
-                    <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                        <article class="pillar-card ideal-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="sparkles" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="ideal-title font-serif text-3xl text-cream">Identity</h3>
-                            <p class="ideal-copy text-base leading-7 text-cream/78">
-                                A return to the point where identity is awakened
-                                and young Muslims know who they are.
-                            </p>
-                        </article>
-                        <article class="pillar-card ideal-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="leaf" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="ideal-title font-serif text-3xl text-cream">Rootedness</h3>
-                            <p class="ideal-copy text-base leading-7 text-cream/78">
-                                Rooted in companionship, remembrance, and
-                                Prophetic character rather than performance or
-                                posturing.
-                            </p>
-                        </article>
-                        <article class="pillar-card ideal-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="compass" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="ideal-title font-serif text-3xl text-cream">Purpose</h3>
-                            <p class="ideal-copy text-base leading-7 text-cream/78">
-                                Leadership that is realized through integrity,
-                                sincerity, and service to people beyond the self.
-                            </p>
-                        </article>
-                        <article class="pillar-card ideal-card rounded-[1.75rem] p-6">
-                            <div class="icon-badge">
-                                <i data-lucide="users-round" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="ideal-title font-serif text-3xl text-cream">For Every Youth</h3>
-                            <p class="ideal-copy text-base leading-7 text-cream/78">
-                                Space for every youth across neighbourhoods,
-                                backgrounds, and circumstances because this work
-                                is for all of us.
-                            </p>
-                        </article>
+                </section>
+                <!-- Problem + Solution group with its own photo background -->
+                <div id="about" class="problem-solution-group pb-20 lg:pb-24">
+                <div class="problem-solution-bg" aria-hidden="true"></div>
+
+                <!-- About: anchor + opening statement -->
+                <section
+                    class="page-section mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+                >
+                    <div class="max-w-5xl space-y-6">
+                        <p class="eyebrow text-cream/55">PROBLEM</p>
+                        <h2 class="editorial-title max-w-5xl text-cream">
+                            <span class="block font-normal mb-[0.50em]">Muslim youth are not lacking passion.</span>
+                            <span class="block">They are lacking structure, and consistent guidance.</span>
+                        </h2>
                     </div>
                 </section>
 
+                <!-- Solution -->
                 <section
-                    class="page-section mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
+                    class="page-section deck-band mx-auto mt-5 max-w-7xl px-8 py-16 sm:px-10 lg:px-14 lg:py-20"
                 >
-                    <div
-                        class="glass-panel rounded-[2rem] px-6 py-8 sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between"
+                    <p class="eyebrow text-cream/60">Solution</p>
+                    <h2
+                        class="mt-5 max-w-4xl font-serif text-4xl text-cream sm:text-5xl lg:text-6xl"
                     >
-                        <div class="max-w-2xl">
-                            <p class="eyebrow text-cream/58">Take the next step</p>
-                            <h2
-                                class="mt-4 font-serif text-4xl text-cream sm:text-5xl"
-                            >
-                                Build what echoes beyond us.
-                            </h2>
-                            <p class="mt-4 text-base leading-7 text-cream/82">
-                                Join the students, mentors, and communities
-                                investing in young people who were made for more.
+                        <em>nuqta.</em> bridges that gap.
+                    </h2>
+
+                    <div class="solution-tree mt-12">
+                        <div class="solution-tree__graph">
+                            <article class="solution-node solution-node--left solution-node--r1">
+                                <p class="eyebrow text-cream/50">01</p>
+                                <p class="solution-node__copy">Student leaders carrying responsibility without a framework.</p>
+                            </article>
+                            <article class="solution-node solution-node--right solution-node--r2">
+                                <p class="eyebrow text-cream/50">02</p>
+                                <p class="solution-node__copy">Youth programs without structure or continuity.</p>
+                            </article>
+                            <article class="solution-node solution-node--left solution-node--r3">
+                                <p class="eyebrow text-cream/50">03</p>
+                                <p class="solution-node__copy">Students disconnected from trusted mentors and institutions.</p>
+                            </article>
+                            <article class="solution-node solution-node--right solution-node--r4">
+                                <p class="eyebrow text-cream/50">04</p>
+                                <p class="solution-node__copy">Leadership expectations without sustained guidance.</p>
+                            </article>
+                            <article class="solution-node solution-node--center solution-node--r5">
+                                <p class="eyebrow text-cream/50">05</p>
+                                <p class="solution-node__copy">Potential diffuses when there is no shared growth path.</p>
+                            </article>
+                        </div>
+
+                        <div class="solution-tree__point">
+                            <span class="solution-tree__dot" aria-hidden="true"></span>
+                            <img src="assets/logos/nuqta-logo-white.svg" alt="Nuqta" class="solution-tree__logo" />
+                            <p class="solution-tree__title">
+                                <span>One point of connection.</span>
+                                <span>One point of growth.</span>
                             </p>
                         </div>
-                        <div class="mt-8 flex flex-col gap-4 lg:mt-0 lg:w-auto">
-                            <a
-                                href="connect/"
-                                class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
-                                >Join the community</a
-                            >
-                            <a
-                                href="about/"
-                                class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
-                                >About Nuqta</a
-                            >
-                            <a
-                                href="program/"
-                                class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
-                                >Program model</a
-                            >
+                    </div>
+                    <p
+                        class="mt-10 max-w-4xl text-xl leading-relaxed text-cream/90 sm:text-2xl lg:text-3xl"
+                    >
+                        We connect
+                        <strong
+                            >students, mentors, MSAs, and communities</strong
+                        >
+                        into one ecosystem.
+                    </p>
+                    <p
+                        class="mt-3 max-w-3xl text-lg leading-relaxed text-cream/75 sm:text-xl"
+                    >
+                        Moments of engagement become sustained growth.
+                    </p>
+                </section>
+                </div><!-- /.problem-solution-group -->
+
+                <!-- nuqta is / is not -->
+                <section class="page-section deck-band nuqta-is-section mt-0">
+                    <div class="mx-auto max-w-7xl px-8 py-16 sm:px-10 lg:px-14 lg:py-20">
+                        <div class="grid lg:grid-cols-2">
+                            <!-- nuqta is -->
+                            <div class="lg:pr-16">
+                                <p class="eyebrow text-cream/60">Nuqta Is</p>
+                                <div class="mt-3 h-px bg-cream/20"></div>
+                                <div class="mt-12 space-y-12">
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream lg:text-4xl">A starting point for identity, purpose, and leadership.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/60">A foundational space where individual growth begins with intentionality and structure.</p>
+                                    </article>
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream lg:text-4xl">A community that develops leaders.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/60">Connecting the experience of previous generations with the ambition of the current.</p>
+                                    </article>
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream lg:text-4xl">A bridge to mentors, institutions, and role models.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/60">A vehicle to strengthen MSAs and youth organizations from within.</p>
+                                    </article>
+                                </div>
+                            </div>
+                            <!-- nuqta is not -->
+                            <div class="mt-16 border-cream/10 lg:mt-0 lg:border-l lg:pl-16">
+                                <p class="eyebrow text-cream/40">Nuqta Is Not</p>
+                                <div class="mt-3 h-px bg-cream/10"></div>
+                                <div class="mt-12 space-y-12">
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream/50 lg:text-4xl">A space defined by judgment.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/40">We reject exclusivity and cliques in favor of rigorous, compassionate development.</p>
+                                    </article>
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream/50 lg:text-4xl">Performative religiosity.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/40">Authentic action over aesthetic adherence. We prioritize internal transformation.</p>
+                                    </article>
+                                    <article>
+                                        <h3 class="font-serif text-3xl text-cream/50 lg:text-4xl">A one-off program or event.</h3>
+                                        <p class="mt-3 text-base leading-7 text-cream/40">Not a weekend seminar, but a long-term framework for consistent excellence.</p>
+                                    </article>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </section>
+
+                <div class="vision-mission-group">
+                    <div class="vision-mission-bg" aria-hidden="true"></div>
+
+                    <!-- Vision -->
+                    <section
+                        class="page-section deck-band vision-mission-section mx-auto mt-0 max-w-7xl px-8 py-16 sm:px-10 lg:px-14 lg:py-20"
+                    >
+                        <p class="eyebrow text-cream/60">Vision</p>
+                        <h2 class="vision-headline">
+                            To create a <strong>future</strong><br />
+                            where <strong>Muslim youth</strong> are...
+                        </h2>
+                        <div class="vision-points-grid">
+                            <article class="vision-point">
+                                <p class="vision-number">01</p>
+                                <h3 class="vision-title">Foundation</h3>
+                                <p class="vision-copy">
+                                    Nurtured by <strong>faith</strong> and grounded in
+                                    <strong>Prophetic character</strong>
+                                </p>
+                            </article>
+                            <article class="vision-point">
+                                <p class="vision-number">02</p>
+                                <h3 class="vision-title">Development</h3>
+                                <p class="vision-copy">
+                                    Equipped to <strong>lead</strong>, <strong>engage</strong>,
+                                    and serve their communities with
+                                    <strong>integrity</strong> and <strong>purpose</strong>
+                                </p>
+                            </article>
+                            <article class="vision-point">
+                                <p class="vision-number">03</p>
+                                <h3 class="vision-title">Impact</h3>
+                                <p class="vision-copy">
+                                    Integral stakeholders in society.
+                                </p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Mission -->
+                    <section
+                        class="page-section deck-band vision-mission-section mx-auto mt-5 max-w-7xl px-8 py-16 sm:px-10 lg:px-14 lg:py-20"
+                    >
+                        <p class="eyebrow text-cream/60">Mission</p>
+                        <h2
+                            class="mt-6 max-w-5xl font-serif text-4xl text-cream sm:text-5xl lg:text-6xl"
+                        >
+                            To provide consistent mentorship and community for
+                            Muslim youth.
+                        </h2>
+                        <p
+                            class="mt-6 max-w-4xl text-xl leading-relaxed text-cream/80 sm:text-2xl"
+                        >
+                            Nuqta is rooted in <strong>Islamic principles</strong>,
+                            creating spaces that strengthen
+                            <strong>identity</strong> and connecting youth with
+                            <strong>role models</strong> — while developing their
+                            confidence and <strong>leadership</strong> skills.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Sustain -->
+                <section
+                    class="page-section deck-band mx-auto mb-8 mt-5 max-w-7xl px-8 py-16 sm:px-10 lg:px-14 lg:py-20"
+                >
+                    <p class="eyebrow text-cream/60">Sustain</p>
+                    <h2
+                        class="mt-6 max-w-5xl font-serif text-4xl text-cream sm:text-5xl lg:text-6xl"
+                    >
+                        When you invest in nuqta., you invest in the next
+                        generation of Muslim leaders.
+                    </h2>
+                    <p
+                        class="mt-6 max-w-4xl text-xl leading-relaxed text-cream/85 sm:text-2xl"
+                    >
+                        You are building infrastructure for the future of the
+                        Ummah.
+                    </p>
+                    <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                        <a
+                            href="support/"
+                            class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                            >Become a sustainer</a
+                        >
+                        <a
+                            href="program/"
+                            class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                            >Program model</a
+                        >
                     </div>
                 </section>
             </main>
 
-            <script src="https://unpkg.com/lucide@latest"></script>
-            <script>
-                lucide.createIcons();
-            </script>
-
-            <footer class="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
-                <div class="glass-panel rounded-[2rem] px-6 py-8 sm:px-8">
+            <footer class="bg-ink px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-7xl">
                     <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                         <div>
                             <img
@@ -366,7 +423,7 @@
                                     class="mt-4 flex flex-col gap-3 text-sm text-cream/76"
                                 >
                                     <a href="./">Home</a>
-                                    <a href="about/">About</a>
+                                    <a href="index.html#about">About</a>
                                     <a href="program/">Program</a>
                                     <a href="support/">Support</a>
                                 </div>
@@ -378,7 +435,12 @@
                                 >
                                     <a href="connect/">Join</a>
                                     <a href="support/">Support</a>
-                                    <a href="https://www.instagram.com/nuqta.youth/" target="_blank" rel="noreferrer">Instagram</a>
+                                    <a
+                                        href="https://www.instagram.com/nuqta.youth/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >Instagram</a
+                                    >
                                 </div>
                             </div>
                             <div>
@@ -395,5 +457,73 @@
                 </div>
             </footer>
         </div>
+        <script>
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.08 },
+            );
+            document
+                .querySelectorAll(".page-section")
+                .forEach((el) => observer.observe(el));
+
+            const aboutAnchor = document.getElementById("about");
+            const header = document.querySelector(".site-header");
+            const navLinks = Array.from(
+                document.querySelectorAll(".site-header .nav-link"),
+            );
+            const homeLinks = navLinks.filter((link) => {
+                const href = link.getAttribute("href");
+                return href === "./" || href === "index.html";
+            });
+            const aboutLinks = navLinks.filter((link) =>
+                (link.getAttribute("href") || "").includes("#about"),
+            );
+
+            const setCurrentNav = (section) => {
+                homeLinks.forEach((link) => {
+                    if (section === "home") {
+                        link.setAttribute("aria-current", "page");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+                aboutLinks.forEach((link) => {
+                    if (section === "about") {
+                        link.setAttribute("aria-current", "page");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+            };
+
+            const updateCurrentSection = () => {
+                if (!aboutAnchor) return;
+                const headerOffset = header ? header.offsetHeight + 12 : 0;
+                const aboutTop =
+                    aboutAnchor.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerOffset;
+                if (window.scrollY >= aboutTop) {
+                    setCurrentNav("about");
+                } else {
+                    setCurrentNav("home");
+                }
+            };
+
+            window.addEventListener("scroll", updateCurrentSection, {
+                passive: true,
+            });
+            window.addEventListener("resize", updateCurrentSection);
+            window.addEventListener("hashchange", updateCurrentSection);
+            window.addEventListener("load", updateCurrentSection);
+            updateCurrentSection();
+        </script>
     </body>
 </html>
