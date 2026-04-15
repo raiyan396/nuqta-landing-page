@@ -195,8 +195,7 @@ summary:focus-visible {
 .support-card,
 .founder-card {
     border: 1px solid var(--nuqta-border);
-    background: rgba(33, 33, 33, 0.56);
-    backdrop-filter: blur(12px);
+    background: #212121;
 }
 
 .pillar-card {
@@ -213,7 +212,7 @@ summary:focus-visible {
     width: 4.25rem;
     height: 4.25rem;
     border-radius: 1.1rem;
-    background: rgba(245, 239, 230, 0.88);
+    background: #f5efe6;
     color: var(--nuqta-ink);
     box-shadow:
         0 10px 24px rgba(0, 0, 0, 0.12),
@@ -843,8 +842,8 @@ summary:focus-visible {
     --text-light-900: #f6f4f1;
     --text-white: #ffffff;
 
-    --panel-dark: rgba(0, 0, 0, 0.82);
-    --panel-light: rgba(246, 244, 241, 0.92);
+    --panel-dark: #111111;
+    --panel-light: #f6f4f1;
     --panel-border-dark: rgba(255, 255, 255, 0.14);
     --panel-border-light: rgba(0, 0, 0, 0.14);
     --panel-radius-pill: 999px;
@@ -927,7 +926,7 @@ p.text-cream\/66 {
 .pillar-card,
 .ideal-card,
 .problem-chip {
-    background: rgba(0, 0, 0, 0.76);
+    background: #111111;
     border: 1px solid var(--panel-border-dark);
     box-shadow: none;
     -webkit-backdrop-filter: none;
@@ -940,7 +939,7 @@ p.text-cream\/66 {
 
 .icon-badge {
     border-radius: 1rem;
-    background: rgba(246, 244, 241, 0.94);
+    background: #f6f4f1;
     color: var(--text-ink-800);
 }
 
@@ -1017,7 +1016,7 @@ p.text-cream\/66 {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--panel-border-dark);
-    border-radius: 2rem;
+    border-radius: 0;
     isolation: isolate;
     background:
         radial-gradient(
@@ -1029,31 +1028,7 @@ p.text-cream\/66 {
 }
 
 .deck-band::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.45;
-    background:
-        repeating-radial-gradient(
-            circle at 18% 20%,
-            rgba(255, 255, 255, 0.16) 0 0.7px,
-            transparent 0.7px 1.8px
-        ),
-        repeating-radial-gradient(
-            circle at 78% 35%,
-            rgba(0, 0, 0, 0.18) 0 0.8px,
-            transparent 0.8px 2px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.05) 0 1px,
-            rgba(0, 0, 0, 0.05) 1px 2px
-        );
-    background-size:
-        140px 140px,
-        120px 120px,
-        3px 3px;
+    display: none;
 }
 
 .deck-band > * {
@@ -1076,7 +1051,7 @@ p.text-cream\/66 {
     padding: 1.6rem 1.7rem;
     border-radius: 1.8rem;
     border: 1px solid var(--panel-border-dark);
-    background: rgba(0, 0, 0, 0.62);
+    background: #111111;
     color: #f6f4f1;
     font-family: var(--font-heading);
     font-size: clamp(1.3rem, 2.1vw, 2.2rem);
@@ -1087,18 +1062,18 @@ p.text-cream\/66 {
 }
 
 .statement-card--dark {
-    background: rgba(0, 0, 0, 0.62);
+    background: #111111;
     color: #f6f4f1;
 }
 
 .statement-card--light {
-    background: rgba(0, 0, 0, 0.62);
+    background: #111111;
     color: #f6f4f1;
 }
 
 .vision-card {
     border: 1px solid var(--panel-border-dark);
-    background: rgba(0, 0, 0, 0.56);
+    background: #111111;
     border-radius: 1.5rem;
     padding: 1.35rem 1.25rem;
 }
@@ -1134,7 +1109,7 @@ p.text-cream\/66 {
     border-radius: 1.6rem;
     text-align: left;
     border: 1px solid var(--panel-border-dark);
-    background: rgba(0, 0, 0, 0.56);
+    background: #111111;
     color: #f6f4f1;
     font-family: var(--font-heading);
     font-size: clamp(1rem, 2vw, 1.8rem);
@@ -1167,7 +1142,7 @@ p.text-cream\/66 {
 
 @media (max-width: 767px) {
     .deck-band {
-        border-radius: 1.35rem;
+        border-radius: 0;
     }
 
     .statement-card {
