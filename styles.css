@@ -109,6 +109,17 @@ body::before {
     pointer-events: none;
 }
 
+.program-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('assets/backgrounds/3-web.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
 a,
 button,
 summary {
@@ -252,9 +263,9 @@ summary:focus-visible {
 }
 
 .icon-badge svg {
-    width: 1.8rem;
-    height: 1.8rem;
-    stroke-width: 2.1;
+    width: 1.75rem;
+    height: 1.75rem;
+    stroke-width: 2;
 }
 
 .pillar-label {
@@ -299,19 +310,32 @@ summary:focus-visible {
 
 .hero-logo {
     height: auto;
+    width: min(24rem, 100%);
     filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.18));
 }
 
 .hero-subheading {
-    font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 3vw, 2.8rem);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: 0.015em;
-    color: rgba(245, 239, 230, 0.94);
+    width: min(24rem, 100%);
+    max-width: 100%;
+    margin: 0;
 }
 
-.hero-subheading span {
+.hero-subheading__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.hero-subheading__svg text {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+    fill: rgba(245, 239, 230, 0.94);
+}
+
+.hero-subheading__bold {
     font-weight: 800;
 }
 
@@ -344,12 +368,13 @@ summary:focus-visible {
     width: 1.75rem;
     height: 1.75rem;
     color: rgba(245, 239, 230, 0.4);
+    transform: translateZ(0);
     animation: arrow-bounce 2.2s ease-in-out infinite;
 }
 
 @keyframes arrow-bounce {
-    0%, 100% { transform: translateY(0); opacity: 0.4; }
-    50% { transform: translateY(6px); opacity: 0.8; }
+    0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.4; }
+    50% { transform: translate3d(0, 6px, 0); opacity: 0.8; }
 }
 
 .home-hero {
@@ -745,11 +770,11 @@ summary:focus-visible {
     }
 
     .hero-logo {
-        max-width: 18rem;
+        width: min(18rem, 100%);
     }
 
     .hero-subheading {
-        font-size: clamp(1.35rem, 7vw, 2rem);
+        width: min(18rem, 100%);
     }
 
     .home-hero {
@@ -1355,6 +1380,57 @@ p.text-cream\/66 {
     flex-wrap: wrap;
 }
 
+.connect-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 24vw);
+    align-items: center;
+    gap: clamp(1.25rem, 3.5vw, 3rem);
+}
+
+.connect-hero-copy {
+    max-width: 52rem;
+}
+
+.connect-hero-mark {
+    width: min(100%, 320px);
+    height: auto;
+    display: block;
+    justify-self: end;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 767px) {
+    .connect-hero-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(100px, 26vw);
+        gap: 1rem;
+    }
+}
+
+.home-post-quote-group {
+    position: relative;
+    isolation: isolate;
+    padding-top: 1.25rem;
+}
+
+.home-post-quote-group > .deck-band + .deck-band {
+    margin-top: 1.25rem;
+}
+
+.home-post-quote-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('assets/backgrounds/4-web.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.program-page main {
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
 /* Problem + Solution section photo background */
 .problem-solution-group {
     position: relative;
@@ -1393,6 +1469,27 @@ p.text-cream\/66 {
 .vision-mission-section {
     background: transparent;
     border: 0;
+}
+
+.founder-feature {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+}
+
+.founder-feature__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    border: 0;
+}
+
+.founder-feature__image--top {
+    object-position: top center;
 }
 
 .nuqta-is-section {
@@ -1485,5 +1582,11 @@ p.text-cream\/66 {
     .program-pill {
         border-radius: 1.1rem;
         line-height: 1.22;
+    }
+}
+
+@media (min-width: 900px) {
+    .founder-feature {
+        grid-template-columns: minmax(260px, 34%) minmax(0, 1fr);
     }
 }
