@@ -109,6 +109,17 @@ body::before {
     pointer-events: none;
 }
 
+.program-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('assets/backgrounds/9.svg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
 a,
 button,
 summary {
@@ -1355,6 +1366,59 @@ p.text-cream\/66 {
     flex-wrap: wrap;
 }
 
+.connect-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 34vw);
+    align-items: center;
+    gap: clamp(1.25rem, 3.5vw, 3rem);
+}
+
+.connect-hero-copy {
+    max-width: 52rem;
+}
+
+.connect-hero-mark {
+    width: min(100%, 460px);
+    height: auto;
+    display: block;
+    justify-self: end;
+    opacity: 0.78;
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+}
+
+@media (max-width: 767px) {
+    .connect-hero-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(140px, 34vw);
+        gap: 1rem;
+    }
+}
+
+.home-post-quote-group {
+    position: relative;
+    isolation: isolate;
+    padding-top: 1.25rem;
+}
+
+.home-post-quote-group > .deck-band + .deck-band {
+    margin-top: 1.25rem;
+}
+
+.home-post-quote-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('assets/backgrounds/8.svg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.program-page main {
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
 /* Problem + Solution section photo background */
 .problem-solution-group {
     position: relative;
@@ -1393,6 +1457,27 @@ p.text-cream\/66 {
 .vision-mission-section {
     background: transparent;
     border: 0;
+}
+
+.founder-feature {
+    display: grid;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+}
+
+.founder-feature__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    border: 0;
+}
+
+.founder-feature__image--top {
+    object-position: top center;
 }
 
 .nuqta-is-section {
@@ -1485,5 +1570,11 @@ p.text-cream\/66 {
     .program-pill {
         border-radius: 1.1rem;
         line-height: 1.22;
+    }
+}
+
+@media (min-width: 900px) {
+    .founder-feature {
+        grid-template-columns: minmax(260px, 34%) minmax(0, 1fr);
     }
 }
