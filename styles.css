@@ -1382,9 +1382,7 @@ p.text-cream\/66 {
     height: auto;
     display: block;
     justify-self: end;
-    opacity: 0.78;
     filter: brightness(0) invert(1);
-    mix-blend-mode: normal;
 }
 
 @media (max-width: 767px) {
