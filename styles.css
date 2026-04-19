@@ -113,7 +113,7 @@ body::before {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('assets/backgrounds/9.svg');
+    background-image: url('assets/backgrounds/3-web.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -263,9 +263,9 @@ summary:focus-visible {
 }
 
 .icon-badge svg {
-    width: 1.8rem;
-    height: 1.8rem;
-    stroke-width: 2.1;
+    width: 1.75rem;
+    height: 1.75rem;
+    stroke-width: 2;
 }
 
 .pillar-label {
@@ -355,12 +355,13 @@ summary:focus-visible {
     width: 1.75rem;
     height: 1.75rem;
     color: rgba(245, 239, 230, 0.4);
+    transform: translateZ(0);
     animation: arrow-bounce 2.2s ease-in-out infinite;
 }
 
 @keyframes arrow-bounce {
-    0%, 100% { transform: translateY(0); opacity: 0.4; }
-    50% { transform: translateY(6px); opacity: 0.8; }
+    0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.4; }
+    50% { transform: translate3d(0, 6px, 0); opacity: 0.8; }
 }
 
 .home-hero {
@@ -1368,7 +1369,7 @@ p.text-cream\/66 {
 
 .connect-hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 34vw);
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 24vw);
     align-items: center;
     gap: clamp(1.25rem, 3.5vw, 3rem);
 }
@@ -1378,7 +1379,7 @@ p.text-cream\/66 {
 }
 
 .connect-hero-mark {
-    width: min(100%, 460px);
+    width: min(100%, 320px);
     height: auto;
     display: block;
     justify-self: end;
@@ -1387,7 +1388,7 @@ p.text-cream\/66 {
 
 @media (max-width: 767px) {
     .connect-hero-layout {
-        grid-template-columns: minmax(0, 1fr) minmax(140px, 34vw);
+        grid-template-columns: minmax(0, 1fr) minmax(100px, 26vw);
         gap: 1rem;
     }
 }
@@ -1406,7 +1407,7 @@ p.text-cream\/66 {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background-image: url('assets/backgrounds/8.svg');
+    background-image: url('assets/backgrounds/8-web.jpg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
