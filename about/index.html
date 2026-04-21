@@ -60,7 +60,7 @@
                             <div class="flex flex-wrap gap-4 text-sm text-cream/72">
                                 <a class="nav-link pb-1" href="../">Home</a>
                                 <a class="nav-link pb-1" href="../about/" aria-current="page">About</a>
-                                <a class="nav-link pb-1" href="../program/">Program</a>
+                                <a class="nav-link pb-1" href="../program/">Programs</a>
                                 <a class="nav-link pb-1" href="../support/">Support</a>
                             </div>
                             <a
@@ -84,7 +84,7 @@
                                 >
                                     <a class="nav-link pb-1" href="../">Home</a>
                                     <a class="nav-link pb-1" href="../about/" aria-current="page">About</a>
-                                    <a class="nav-link pb-1" href="../program/">Program</a>
+                                    <a class="nav-link pb-1" href="../program/">Programs</a>
                                     <a class="nav-link pb-1" href="../support/">Support</a>
                                     <a
                                         href="../connect/"
@@ -99,6 +99,67 @@
             </header>
 
             <main>
+                <section class="page-section nuqta-carousel-section">
+                    <div class="nuqta-carousel" data-nuqta-carousel>
+                            <div class="nuqta-carousel__viewport" data-carousel-viewport>
+                                <div class="nuqta-carousel__track" data-carousel-track>
+                                    <article class="nuqta-polaroid nuqta-polaroid--tilt-left-soft">
+                                        <img
+                                            src="../assets/images/what-is-nuqta/nuqta-is.png"
+                                            alt="Nuqta is post describing mission and identity."
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="nuqta-polaroid__image"
+                                        />
+                                    </article>
+                                    <article class="nuqta-polaroid nuqta-polaroid--tilt-right">
+                                        <img
+                                            src="../assets/images/what-is-nuqta/WIN.png"
+                                            alt="WIN post highlighting Nuqta's youth impact."
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="nuqta-polaroid__image"
+                                        />
+                                    </article>
+                                    <article class="nuqta-polaroid nuqta-polaroid--tilt-left">
+                                        <img
+                                            src="../assets/images/what-is-nuqta/mentorship.png"
+                                            alt="Mentorship moments at Nuqta youth programming."
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="nuqta-polaroid__image"
+                                        />
+                                    </article>
+                                    <article class="nuqta-polaroid nuqta-polaroid--tilt-left">
+                                        <img
+                                            src="../assets/images/what-is-nuqta/suhbah.png"
+                                            alt="Suhbah post showing community and belonging."
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="nuqta-polaroid__image"
+                                        />
+                                    </article>
+                                    <article class="nuqta-polaroid nuqta-polaroid--tilt-right-soft">
+                                        <img
+                                            src="../assets/images/what-is-nuqta/leadership.png"
+                                            alt="Leadership post showing youth development focus."
+                                            loading="lazy"
+                                            decoding="async"
+                                            class="nuqta-polaroid__image"
+                                        />
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="nuqta-carousel__dots" data-carousel-dots aria-label="What is Nuqta slides">
+                                <button type="button" class="nuqta-carousel__dot is-active" data-dot-index="0" aria-label="Go to slide 1" aria-current="true"></button>
+                                <button type="button" class="nuqta-carousel__dot" data-dot-index="1" aria-label="Go to slide 2"></button>
+                                <button type="button" class="nuqta-carousel__dot" data-dot-index="2" aria-label="Go to slide 3"></button>
+                                <button type="button" class="nuqta-carousel__dot" data-dot-index="3" aria-label="Go to slide 4"></button>
+                                <button type="button" class="nuqta-carousel__dot" data-dot-index="4" aria-label="Go to slide 5"></button>
+                            </div>
+                    </div>
+                </section>
+
                 <div class="problem-solution-group pb-20 lg:pb-24">
                     <div class="problem-solution-bg" aria-hidden="true"></div>
 
@@ -323,7 +384,7 @@
                                     <p class="eyebrow text-cream/58">Advisor and Lead Mentor</p>
                                     <h3 class="mt-3 font-serif text-3xl text-cream">Omar Khan</h3>
                                     <p class="mt-4 text-base leading-7 text-cream/78">
-                                        Omar Khan serves as nuqta.'s Advisor and Lead Mentor. With over 20 years of experience in community work, he has dedicated his career to mentoring and developing the next generation of Muslim leaders. Over the years, he previously served as CFO of AlMaghrib Institute, Youth Director at ADAMS Center, and Director of Outreach at Yaqeen Institute. Omar brings a unique blend of leadership, wisdom, and passion to help young people grow in confidence, character, and faith while preparing them to lead with purpose.
+                                        Omar Khan serves as nuqta.'s Advisor and Lead Mentor. With over 20 years of experience in community work, he has dedicated his career to mentoring and developing the next generation of Muslim leaders. Over the years, he previously served as CFO of AlMaghrib Institute, Youth Director at ADAMS Center, and Director of Outreach at Yaqeen Institute. Omar brings a unique blend of leadership, wisdom, and passion to help youth grow in confidence, character, and faith while preparing them to lead with purpose.
                                     </p>
                                 </div>
                             </article>
@@ -353,7 +414,7 @@
                                 <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
                                     <a href="../">Home</a>
                                     <a href="../about/">About</a>
-                                    <a href="../program/">Program</a>
+                                    <a href="../program/">Programs</a>
                                     <a href="../support/">Support</a>
                                 </div>
                             </div>
@@ -383,6 +444,19 @@
             </footer>
         </div>
         <script>
+            const setAboutHeaderHeight = () => {
+                const siteHeader = document.querySelector(".site-header");
+                if (!siteHeader) {
+                    return;
+                }
+                document.documentElement.style.setProperty(
+                    "--about-header-height",
+                    `${siteHeader.offsetHeight}px`,
+                );
+            };
+            setAboutHeaderHeight();
+            window.addEventListener("resize", setAboutHeaderHeight);
+
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
@@ -397,6 +471,216 @@
             document
                 .querySelectorAll(".page-section")
                 .forEach((el) => observer.observe(el));
+
+            const carouselRoot = document.querySelector("[data-nuqta-carousel]");
+            if (carouselRoot) {
+                const viewport = carouselRoot.querySelector("[data-carousel-viewport]");
+                const track = carouselRoot.querySelector("[data-carousel-track]");
+                const dots = Array.from(carouselRoot.querySelectorAll("[data-dot-index]"));
+                const desktopQuery = window.matchMedia("(min-width: 1024px)");
+                const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+                let mouseBias = 0;
+                let currentSpeed = 0;
+                let isHovering = false;
+                let offset = 0;
+                let rafId = 0;
+                let lastTime = 0;
+                let originalWidth = 0;
+                let desktopReady = false;
+
+                const setActiveDot = (index) => {
+                    dots.forEach((dot, dotIndex) => {
+                        const isActive = dotIndex === index;
+                        dot.classList.toggle("is-active", isActive);
+                        if (isActive) {
+                            dot.setAttribute("aria-current", "true");
+                        } else {
+                            dot.removeAttribute("aria-current");
+                        }
+                    });
+                };
+
+                const getOriginalCards = () =>
+                    Array.from(track.querySelectorAll(".nuqta-polaroid:not(.is-clone)"));
+
+                const getCardsInVisualOrder = () => {
+                    const cards = getOriginalCards();
+                    if (desktopQuery.matches) {
+                        return cards;
+                    }
+                    return cards
+                        .slice()
+                        .sort((left, right) => left.offsetLeft - right.offsetLeft);
+                };
+
+                const syncClones = () => {
+                    track.querySelectorAll(".nuqta-polaroid.is-clone").forEach((clone) => clone.remove());
+                    const cards = getOriginalCards();
+                    cards.forEach((card) => {
+                        const clone = card.cloneNode(true);
+                        clone.classList.add("is-clone");
+                        clone.setAttribute("aria-hidden", "true");
+                        const image = clone.querySelector("img");
+                        if (image) {
+                            image.alt = "";
+                        }
+                        track.appendChild(clone);
+                    });
+                    originalWidth = track.scrollWidth / 2;
+                };
+
+                const stopAnimation = () => {
+                    if (rafId) {
+                        window.cancelAnimationFrame(rafId);
+                        rafId = 0;
+                    }
+                };
+
+                const animate = (time) => {
+                    if (!lastTime) {
+                        lastTime = time;
+                    }
+                    const deltaSeconds = Math.min((time - lastTime) / 1000, 0.08);
+                    lastTime = time;
+
+                    const idleSpeed = reducedMotionQuery.matches ? -8 : -32;
+                    const maxSpeed = reducedMotionQuery.matches ? 70 : 190;
+                    const targetSpeed = isHovering ? mouseBias * maxSpeed : idleSpeed;
+                    currentSpeed += (targetSpeed - currentSpeed) * 0.12;
+                    offset += currentSpeed * deltaSeconds;
+
+                    if (originalWidth > 0) {
+                        while (offset <= -originalWidth) {
+                            offset += originalWidth;
+                        }
+                        while (offset > 0) {
+                            offset -= originalWidth;
+                        }
+                    }
+
+                    track.style.transform = `translate3d(${offset}px, 0, 0)`;
+                    rafId = window.requestAnimationFrame(animate);
+                };
+
+                const updateMobileDot = () => {
+                    if (desktopQuery.matches) {
+                        return;
+                    }
+                    const cards = getCardsInVisualOrder();
+                    let nearestIndex = 0;
+                    let smallestDelta = Number.POSITIVE_INFINITY;
+                    cards.forEach((card, index) => {
+                        const delta = Math.abs(card.offsetLeft - viewport.scrollLeft);
+                        if (delta < smallestDelta) {
+                            smallestDelta = delta;
+                            nearestIndex = index;
+                        }
+                    });
+                    setActiveDot(nearestIndex);
+                };
+
+                const enableDesktop = () => {
+                    if (desktopReady) {
+                        return;
+                    }
+                    syncClones();
+                    track.style.transform = "translate3d(0, 0, 0)";
+                    viewport.scrollLeft = 0;
+                    offset = 0;
+                    currentSpeed = 0;
+                    lastTime = 0;
+                    desktopReady = true;
+                    stopAnimation();
+                    rafId = window.requestAnimationFrame(animate);
+                };
+
+                const enableMobile = () => {
+                    desktopReady = false;
+                    stopAnimation();
+                    track.querySelectorAll(".nuqta-polaroid.is-clone").forEach((clone) => clone.remove());
+                    track.style.transform = "";
+                    mouseBias = 0;
+                    currentSpeed = 0;
+                    offset = 0;
+                    lastTime = 0;
+                    updateMobileDot();
+                };
+
+                const refreshMode = () => {
+                    if (desktopQuery.matches) {
+                        enableDesktop();
+                    } else {
+                        enableMobile();
+                    }
+                };
+
+                viewport.addEventListener("pointermove", (event) => {
+                    if (!desktopQuery.matches || reducedMotionQuery.matches) {
+                        return;
+                    }
+                    isHovering = true;
+                    const bounds = viewport.getBoundingClientRect();
+                    const position = (event.clientX - bounds.left) / Math.max(bounds.width, 1);
+                    const normalized = Math.min(1, Math.max(-1, (position - 0.5) * 2));
+                    const deadZone = 0.28;
+                    if (Math.abs(normalized) <= deadZone) {
+                        mouseBias = 0;
+                        return;
+                    }
+                    const adjusted = (Math.abs(normalized) - deadZone) / (1 - deadZone);
+                    const curved = Math.pow(adjusted, 1.35);
+                    mouseBias = -Math.sign(normalized) * curved;
+                });
+
+                viewport.addEventListener("pointerleave", () => {
+                    isHovering = false;
+                    mouseBias = 0;
+                });
+
+                window.addEventListener("resize", () => {
+                    if (!desktopQuery.matches || !desktopReady) {
+                        return;
+                    }
+                    syncClones();
+                });
+
+                viewport.addEventListener("scroll", () => {
+                    updateMobileDot();
+                });
+
+                dots.forEach((dot) => {
+                    dot.addEventListener("click", () => {
+                        if (desktopQuery.matches) {
+                            return;
+                        }
+                        const index = Number(dot.dataset.dotIndex || "0");
+                        const cards = getCardsInVisualOrder();
+                        const target = cards[index];
+                        if (!target) {
+                            return;
+                        }
+                        viewport.scrollTo({
+                            left: target.offsetLeft,
+                            behavior: "smooth",
+                        });
+                        setActiveDot(index);
+                    });
+                });
+
+                const mediaChangeHandler = () => {
+                    refreshMode();
+                };
+                if (desktopQuery.addEventListener) {
+                    desktopQuery.addEventListener("change", mediaChangeHandler);
+                    reducedMotionQuery.addEventListener("change", mediaChangeHandler);
+                } else {
+                    desktopQuery.addListener(mediaChangeHandler);
+                    reducedMotionQuery.addListener(mediaChangeHandler);
+                }
+
+                refreshMode();
+            }
         </script>
     </body>
 </html>

@@ -61,7 +61,7 @@
                             <div class="flex flex-wrap gap-4 text-sm text-cream/72">
                                 <a class="nav-link pb-1" href="./">Home</a>
                                 <a class="nav-link pb-1" href="about/">About</a>
-                                <a class="nav-link pb-1" href="./program/">Program</a>
+                                <a class="nav-link pb-1" href="./program/">Programs</a>
                                 <a class="nav-link pb-1" href="./support/" aria-current="page">Support</a>
                             </div>
                             <a
@@ -85,7 +85,7 @@
                                 >
                                     <a class="nav-link pb-1" href="./">Home</a>
                                     <a class="nav-link pb-1" href="about/">About</a>
-                                    <a class="nav-link pb-1" href="./program/">Program</a>
+                                    <a class="nav-link pb-1" href="./program/">Programs</a>
                                     <a class="nav-link pb-1" href="./support/" aria-current="page">Support</a>
                                     <a
                                         href="./connect/"
@@ -130,14 +130,15 @@
                             Your support helps create spaces where Muslim youth are guided, supported, and developed into leaders rooted in faith and purpose.
                         </p>
                         <div class="flex flex-col gap-4 sm:flex-row">
-                            <button
-                                type="button"
-                                disabled
-                                aria-disabled="true"
-                                class="gradient-button inline-flex cursor-not-allowed items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em] opacity-70"
+                            <a
+                                id="donate-button"
+                                href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
                             >
                                 Sustain the mission
-                            </button>
+                            </a>
                             <a
                                 href="./connect/"
                                 class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
@@ -155,12 +156,12 @@
                         Mentorship, companionship, and leadership rooted in faith.
                     </h2>
                     <div class="mt-10 grid gap-5 md:grid-cols-3">
-                        <article class="statement-card">Mentorship that gives young people access to trusted guidance and role models.</article>
+                        <article class="statement-card">Mentorship that gives youth access to trusted guidance and role models.</article>
                         <article class="statement-card">Companionship that keeps them connected to faith and community.</article>
                         <article class="statement-card">Leaders rooted in prophetic character, service, and responsibility.</article>
                     </div>
                     <p class="mt-8 max-w-4xl text-base leading-relaxed text-cream/78 sm:text-lg">
-                        Our goal is to keep programs free or highly accessible, so cost never becomes a barrier to entry for any young person.
+                        Our goal is to keep programs free or highly accessible, so cost never becomes a barrier to entry.
                     </p>
                 </section>
 
@@ -197,7 +198,7 @@
                                 <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
                                     <a href="./">Home</a>
                                     <a href="about/">About</a>
-                                    <a href="./program/">Program</a>
+                                    <a href="./program/">Programs</a>
                                     <a href="./support/">Support</a>
                                 </div>
                             </div>
@@ -227,6 +228,13 @@
             </footer>
         </div>
         <script>
+            const STRIPE_DONATION_LINK =
+                "https://buy.stripe.com/REPLACE_WITH_YOUR_LINK";
+            const donateButton = document.getElementById("donate-button");
+            if (donateButton && STRIPE_DONATION_LINK) {
+                donateButton.href = STRIPE_DONATION_LINK;
+            }
+
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {

@@ -7,6 +7,7 @@
     --nuqta-panel: rgba(33, 33, 33, 0.72);
     --nuqta-panel-soft: rgba(245, 239, 230, 0.1);
     --nuqta-border: rgba(245, 239, 230, 0.18);
+    --nuqta-carousel-gray: #9a9a94;
 }
 
 * {
@@ -1429,6 +1430,160 @@ p.text-cream\/66 {
 
 .program-page main {
     padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+/* What is Nuqta carousel */
+.nuqta-carousel-section {
+    background:
+        radial-gradient(circle at 18% 8%, rgba(255, 236, 214, 0.09), transparent 42%),
+        radial-gradient(circle at 86% 88%, rgba(0, 0, 0, 0.2), transparent 44%),
+        linear-gradient(180deg, #342d27, #2b2520);
+    border-bottom: 1px solid rgba(243, 232, 214, 0.12);
+    padding: clamp(1.25rem, 3vw, 2.5rem) 0 clamp(1rem, 2.4vw, 2rem);
+    min-height: calc(100dvh - var(--about-header-height, 6.25rem));
+    display: flex;
+}
+
+.nuqta-carousel {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nuqta-carousel__viewport {
+    overflow: hidden;
+    padding: 0.55rem 0.55rem 1.15rem;
+    user-select: none;
+    width: 100%;
+}
+
+.nuqta-carousel__track {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    will-change: transform;
+}
+
+.nuqta-polaroid {
+    flex: 0 0 clamp(430px, 33vw, 660px);
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    border: 0;
+}
+
+.nuqta-polaroid__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+}
+
+.nuqta-polaroid--tilt-left {
+    transform: rotate(-2deg);
+}
+
+.nuqta-polaroid--tilt-left-soft {
+    transform: rotate(-0.9deg);
+}
+
+.nuqta-polaroid--tilt-right {
+    transform: rotate(1.8deg);
+}
+
+.nuqta-polaroid--tilt-right-soft {
+    transform: rotate(0.95deg);
+}
+
+.nuqta-carousel__dots {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.44rem;
+    margin-top: 0.65rem;
+}
+
+.nuqta-carousel__dot {
+    appearance: none;
+    border: 0;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: rgba(245, 239, 230, 0.42);
+    cursor: pointer;
+    padding: 0;
+}
+
+.nuqta-carousel__dot.is-active {
+    background: rgba(245, 239, 230, 0.95);
+    width: 1.05rem;
+    transform: none;
+}
+
+@media (max-width: 1023px) {
+    .nuqta-carousel-section {
+        padding: 0.9rem 0 1.15rem;
+    }
+
+    .nuqta-carousel {
+        min-height: auto;
+    }
+
+    .nuqta-carousel__viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 0;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.6rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .nuqta-carousel__viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nuqta-carousel__viewport {
+        scrollbar-width: none;
+    }
+
+    .nuqta-carousel__track {
+        gap: 0;
+        will-change: auto;
+    }
+
+    .nuqta-polaroid,
+    .nuqta-polaroid--tilt-left,
+    .nuqta-polaroid--tilt-left-soft,
+    .nuqta-polaroid--tilt-right,
+    .nuqta-polaroid--tilt-right-soft {
+        transform: none;
+        flex-basis: 100%;
+        scroll-snap-align: start;
+    }
+
+    .nuqta-polaroid:nth-child(2) {
+        order: -1;
+    }
+
+    .nuqta-carousel__dots {
+        display: flex;
+        margin-top: 0.4rem;
+        padding-bottom: 0.55rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nuqta-carousel__track {
+        transform: none !important;
+    }
 }
 
 /* Problem + Solution section photo background */
