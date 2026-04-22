@@ -1,16 +1,789 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting to Support</title>
-    <meta http-equiv="refresh" content="0; url=../support.html" />
-    <link rel="canonical" href="../support.html" />
-    <script>
-      window.location.replace("../support.html");
-    </script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="../support.html">Support</a>...</p>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Support nuqta. | Help build the infrastructure</title>
+        <meta
+            name="description"
+            content="Support nuqta.'s mission to connect Muslim youth with mentorship, community, and leadership development."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Poppins:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.cdnfonts.com/css/open-sauce-one"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            ink: "#212121",
+                            cream: "#f5efe6",
+                            mist: "#b4b4b4",
+                            amber: "#c98c3a",
+                            slate: "#62707c",
+                        },
+                        fontFamily: {
+                            sans: ["Poppins", "system-ui", "sans-serif"],
+                            serif: ["Source Serif 4", "Georgia", "serif"],
+                            mono: ["Anonymous Pro", "monospace"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="../styles.css" />
+    </head>
+    <body class="support-page">
+        <div class="support-photo-bg" aria-hidden="true"></div>
+        <div class="nuqta-shell">
+            <header class="site-header z-30 bg-ink">
+                <div class="px-4 py-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between gap-4">
+                        <a href="/" class="inline-flex items-center">
+                            <img
+                                src="../assets/logos/nuqta-logo-white.svg"
+                                alt="nuqta."
+                                class="h-8 w-auto sm:h-9"
+                            />
+                        </a>
+                        <nav
+                            aria-label="Primary navigation"
+                            class="hidden lg:flex lg:items-center lg:gap-6"
+                        >
+                            <div class="flex flex-wrap gap-4 text-sm text-cream/72">
+                                <a class="nav-link pb-1" href="/">Home</a>
+                                <a class="nav-link pb-1" href="/about/">About</a>
+                                <a class="nav-link pb-1" href="/program/">Programs</a>
+                                <a class="nav-link pb-1" href="/support/" aria-current="page">Support</a>
+                            </div>
+                            <a
+                                href="/connect/"
+                                class="gradient-button inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em] lg:w-auto"
+                                >Join the community</a
+                            >
+                        </nav>
+                        <details class="relative lg:hidden">
+                            <summary
+                                class="menu-summary ghost-button inline-flex cursor-pointer items-center justify-center rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.14em]"
+                            >
+                                Menu
+                            </summary>
+                            <div
+                                class="menu-panel absolute right-0 mt-3 w-64 rounded-[1.5rem] p-4"
+                            >
+                                <nav
+                                    aria-label="Mobile navigation"
+                                    class="flex flex-col gap-3 text-sm text-cream/80"
+                                >
+                                    <a class="nav-link pb-1" href="/">Home</a>
+                                    <a class="nav-link pb-1" href="/about/">About</a>
+                                    <a class="nav-link pb-1" href="/program/">Programs</a>
+                                    <a class="nav-link pb-1" href="/support/" aria-current="page">Support</a>
+                                    <a
+                                        href="/connect/"
+                                        class="gradient-button mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.14em]"
+                                        >Join the community</a
+                                    >
+                                </nav>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section
+                    id="donation-feedback"
+                    class="page-section mx-auto hidden max-w-5xl px-4 pt-8 sm:px-6 lg:px-8"
+                    aria-live="polite"
+                >
+                    <div id="donation-feedback-card" class="donation-feedback">
+                        <p
+                            id="donation-feedback-eyebrow"
+                            class="eyebrow text-cream/60"
+                        >
+                            Donation update
+                        </p>
+                        <p
+                            id="donation-feedback-message"
+                            class="donation-feedback__message"
+                        ></p>
+                    </div>
+                </section>
+
+                <section
+                    class="page-section relative mx-auto flex min-h-[80svh] max-w-7xl items-center overflow-hidden px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-20"
+                >
+                    <img
+                        src="../assets/images/handshake.svg"
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        class="pointer-events-none absolute right-[-3%] top-1/2 z-0 hidden h-auto w-[clamp(220px,30vw,480px)] -translate-y-1/2 select-none md:block"
+                        style="opacity: 0.78; filter: brightness(0);"
+                    />
+                    <div class="relative z-10 max-w-4xl space-y-7 md:pr-24 support-hero-content">
+                        <p class="eyebrow text-cream/55">Support nuqta.</p>
+                        <h1 class="editorial-title max-w-4xl text-cream">
+                            Be part of what we are <em>building.</em>
+                        </h1>
+                        <div class="guided-copy max-w-3xl">
+                            <p class="guided-copy__lead">
+                                Your support helps create spaces where Muslim youth are guided and supported.
+                            </p>
+                            <p class="guided-copy__support">
+                                Developed into <strong class="copy-accent">leaders rooted in faith and purpose.</strong>
+                            </p>
+                        </div>
+                        <img
+                            src="../assets/images/handshake.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            class="support-hero-graphic-mobile pointer-events-none mx-auto h-auto w-[min(72vw,320px)] select-none md:hidden"
+                            style="opacity: 0.78; filter: brightness(0);"
+                        />
+                        <div class="flex flex-col gap-4 sm:flex-row">
+                            <button
+                                id="donate-button"
+                                type="button"
+                                data-open-donate-modal
+                                class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                            >
+                                Sustain the mission
+                            </button>
+                            <a
+                                href="/connect/"
+                                class="ghost-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                                >Join the community</a
+                                    >
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="page-section deck-band mx-auto max-w-7xl px-4 py-14 sm:px-10 lg:px-14 lg:py-20"
+                >
+                    <p class="eyebrow text-cream/60">What your support makes possible</p>
+                    <h2 class="mt-6 max-w-5xl font-serif text-4xl text-cream sm:text-5xl lg:text-6xl">
+                        Mentorship, companionship, and leadership rooted in <em>faith.</em>
+                    </h2>
+                    <div class="mt-10 grid gap-5 md:grid-cols-3">
+                        <article class="statement-card">
+                            <span class="statement-card__title">Mentorship</span>
+                            <span class="statement-card__body">Youth gain access to trusted guidance and role models.</span>
+                        </article>
+                        <article class="statement-card">
+                            <span class="statement-card__title">Companionship</span>
+                            <span class="statement-card__body">Young people stay connected to faith and community.</span>
+                        </article>
+                        <article class="statement-card">
+                            <span class="statement-card__title">Leadership</span>
+                            <span class="statement-card__body">Leaders are formed in prophetic character, service, and responsibility.</span>
+                        </article>
+                    </div>
+                    <p class="principle-line">
+                        Our goal is to keep programs free or highly accessible, so <strong class="copy-accent">cost never becomes a barrier to entry.</strong>
+                    </p>
+                </section>
+
+                <section
+                    class="page-section quote-bridge mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28"
+                >
+                    <div class="mx-auto max-w-4xl space-y-8">
+                        <blockquote class="font-serif text-3xl font-bold leading-tight text-cream sm:text-4xl lg:text-5xl">
+                            When you support nuqta., you invest in the next generation of Muslim leaders.
+                        </blockquote>
+                        <p class="eyebrow text-cream/50">Sustain the mission</p>
+                    </div>
+                </section>
+
+                <section
+                    class="page-section mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28"
+                >
+                    <div class="flex justify-center">
+                        <button
+                            type="button"
+                            data-donate-button
+                            data-open-donate-modal
+                            class="gradient-button inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                        >
+                            Donate now
+                        </button>
+                    </div>
+                </section>
+            </main>
+
+            <div
+                id="donation-modal"
+                class="donation-modal hidden"
+                aria-hidden="true"
+            >
+                <div class="donation-modal__backdrop" data-close-donate-modal></div>
+                <div
+                    class="donation-modal__dialog glass-panel"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="donation-modal-title"
+                    aria-describedby="donation-modal-description"
+                    tabindex="-1"
+                >
+                    <button
+                        type="button"
+                        class="donation-modal__close ghost-button"
+                        data-close-donate-modal
+                        aria-label="Close donation modal"
+                    >
+                        Close
+                    </button>
+                    <div class="donation-modal__header">
+                        <p class="eyebrow text-cream/55">Support nuqta.</p>
+                        <h2
+                            id="donation-modal-title"
+                            class="font-serif text-3xl font-bold text-cream sm:text-4xl"
+                        >
+                            Choose how you want to <em>give.</em>
+                        </h2>
+                        <p
+                            id="donation-modal-description"
+                            class="donation-modal__description"
+                        >
+                            Select a one-time gift or become a monthly supporter with one of the preset amounts below.
+                        </p>
+                    </div>
+
+                    <div
+                        class="donation-modal__toggle"
+                        role="tablist"
+                        aria-label="Donation frequency"
+                    >
+                        <button
+                            type="button"
+                            class="donation-toggle is-active"
+                            data-donation-frequency-trigger
+                            data-frequency="one-time"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="donation-panel-one-time"
+                            id="donation-tab-one-time"
+                        >
+                            One time
+                        </button>
+                        <button
+                            type="button"
+                            class="donation-toggle"
+                            data-donation-frequency-trigger
+                            data-frequency="monthly"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="donation-panel-monthly"
+                            id="donation-tab-monthly"
+                        >
+                            Monthly
+                        </button>
+                    </div>
+
+                    <section
+                        id="donation-panel-one-time"
+                        class="donation-panel is-active"
+                        data-donation-panel
+                        data-frequency="one-time"
+                        role="tabpanel"
+                        aria-labelledby="donation-tab-one-time"
+                    >
+                        <p class="donation-panel__label">One-time giving</p>
+                        <div class="donation-options" data-donation-options></div>
+                    </section>
+
+                    <section
+                        id="donation-panel-monthly"
+                        class="donation-panel"
+                        data-donation-panel
+                        data-frequency="monthly"
+                        role="tabpanel"
+                        aria-labelledby="donation-tab-monthly"
+                        hidden
+                    >
+                        <p class="donation-panel__label">Monthly giving</p>
+                        <div class="donation-options" data-donation-options></div>
+                    </section>
+
+                    <div class="donation-other">
+                        <label
+                            class="donation-other__label"
+                            for="donation-other-amount"
+                        >
+                            Other amount
+                        </label>
+                        <div class="donation-other__field">
+                            <span class="donation-other__currency">$</span>
+                            <input
+                                id="donation-other-amount"
+                                class="donation-other__input"
+                                type="number"
+                                min="1"
+                                step="1"
+                                inputmode="numeric"
+                                placeholder="Enter amount"
+                            />
+                            <span class="donation-other__unit">USD</span>
+                        </div>
+                        <p
+                            id="donation-selection-summary"
+                            class="donation-other__hint"
+                        >
+                            Select a preset or enter another amount to continue to secure checkout.
+                        </p>
+                        <p
+                            id="donation-error"
+                            class="donation-error hidden"
+                            role="alert"
+                        ></p>
+                        <button
+                            id="donation-submit"
+                            type="button"
+                            class="gradient-button donation-other__cta inline-flex items-center justify-center rounded-full px-6 py-4 text-sm font-semibold uppercase tracking-[0.15em]"
+                            disabled
+                        >
+                            Select an amount
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-ink px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-7xl">
+                    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                        <div>
+                            <img
+                                src="../assets/logos/nuqta-logo-white.svg"
+                                alt="nuqta."
+                                class="h-10 w-auto sm:h-12"
+                            />
+                            <p class="mt-4 max-w-xl text-base leading-7 text-cream/76">
+                                A mentorship-driven ecosystem for Muslim youth,
+                                rooted in Prophetic character, companionship,
+                                and meaningful leadership development.
+                            </p>
+                        </div>
+                        <div class="grid gap-8 sm:grid-cols-3">
+                            <div>
+                                <p class="eyebrow text-cream/58">Navigate</p>
+                                <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
+                                    <a href="/">Home</a>
+                                    <a href="/about/">About</a>
+                                    <a href="/program/">Programs</a>
+                                    <a href="/support/">Support</a>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="eyebrow text-cream/58">Connect</p>
+                                <div class="mt-4 flex flex-col gap-3 text-sm text-cream/76">
+                                    <a href="/connect/">Join</a>
+                                    <a href="/support/">Support</a>
+                                    <a
+                                        href="https://www.instagram.com/nuqta.youth/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        >Instagram</a
+                                    >
+                                </div>
+                            </div>
+                            <div>
+                                <p class="eyebrow text-cream/58">Contact</p>
+                                <div class="mt-4 space-y-3 text-sm text-cream/76">
+                                    <p>EMAIL_ADDRESS</p>
+                                    <p>Est. 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+            const DONATION_LINKS = {
+                "one-time": [10, 25, 50, 100],
+                monthly: [10, 25, 50, 100],
+            };
+            const DONATION_MIN_AMOUNT = 1;
+            const DONATION_API_ENDPOINT = "/api/create-donation-session";
+
+            const donationModal = document.getElementById("donation-modal");
+            const donationDialog = donationModal?.querySelector(
+                ".donation-modal__dialog",
+            );
+            const donationTriggers = document.querySelectorAll(
+                "[data-open-donate-modal]",
+            );
+            const donationCloseButtons = document.querySelectorAll(
+                "[data-close-donate-modal]",
+            );
+            const donationFrequencyTriggers = document.querySelectorAll(
+                "[data-donation-frequency-trigger]",
+            );
+            const donationPanels = document.querySelectorAll(
+                "[data-donation-panel]",
+            );
+            const donationOtherAmountInput = document.getElementById(
+                "donation-other-amount",
+            );
+            const donationSubmitButton =
+                document.getElementById("donation-submit");
+            const donationSummary = document.getElementById(
+                "donation-selection-summary",
+            );
+            const donationError = document.getElementById("donation-error");
+            const donationFeedback = document.getElementById(
+                "donation-feedback",
+            );
+            const donationFeedbackCard = document.getElementById(
+                "donation-feedback-card",
+            );
+            const donationFeedbackEyebrow = document.getElementById(
+                "donation-feedback-eyebrow",
+            );
+            const donationFeedbackMessage = document.getElementById(
+                "donation-feedback-message",
+            );
+            let lastDonationTrigger = null;
+            let currentDonationFrequency = "one-time";
+            let selectedPresetAmount = null;
+            let isDonationSubmitting = false;
+
+            const getCustomAmount = () => {
+                const value = donationOtherAmountInput?.value.trim() ?? "";
+                if (!value) {
+                    return null;
+                }
+
+                const amount = Number.parseInt(value, 10);
+                return Number.isInteger(amount) ? amount : null;
+            };
+
+            const getSelectedAmount = () => {
+                const customAmount = getCustomAmount();
+
+                if (customAmount !== null) {
+                    return customAmount;
+                }
+
+                return selectedPresetAmount;
+            };
+
+            const setDonationError = (message = "") => {
+                if (!donationError) {
+                    return;
+                }
+
+                donationError.textContent = message;
+                donationError.classList.toggle("hidden", !message);
+            };
+
+            const renderDonationOptions = () => {
+                donationPanels.forEach((panel) => {
+                    const frequency = panel.dataset.frequency;
+                    const optionsContainer = panel.querySelector(
+                        "[data-donation-options]",
+                    );
+                    const options = DONATION_LINKS[frequency] ?? [];
+
+                    optionsContainer.innerHTML = "";
+
+                    options.forEach((option) => {
+                        const optionButton = document.createElement("button");
+                        optionButton.type = "button";
+                        optionButton.className = "donation-option";
+                        optionButton.textContent =
+                            frequency === "monthly"
+                                ? `$${option}/mo`
+                                : `$${option}`;
+                        optionButton.dataset.amount = String(option);
+                        optionButton.dataset.frequency = frequency;
+                        optionButton.setAttribute(
+                            "aria-pressed",
+                            "false",
+                        );
+
+                        optionButton.addEventListener("click", () => {
+                            currentDonationFrequency = frequency;
+                            selectedPresetAmount = option;
+                            if (donationOtherAmountInput) {
+                                donationOtherAmountInput.value = "";
+                            }
+                            updateDonationUI();
+                        });
+
+                        optionsContainer.appendChild(optionButton);
+                    });
+                });
+            };
+
+            const updateDonationFeedback = () => {
+                if (
+                    !donationFeedback ||
+                    !donationFeedbackCard ||
+                    !donationFeedbackEyebrow ||
+                    !donationFeedbackMessage
+                ) {
+                    return;
+                }
+
+                const params = new URLSearchParams(window.location.search);
+                const state = params.get("donation");
+                const frequency = params.get("frequency");
+                const amount = params.get("amount");
+
+                if (!state) {
+                    donationFeedback.classList.add("hidden");
+                    return;
+                }
+
+                let message = "";
+                let eyebrow = "Donation update";
+                let tone = "info";
+
+                if (state === "success") {
+                    eyebrow = "Thank you";
+                    tone = "success";
+                    const amountCopy = amount ? `$${amount}` : "Your gift";
+                    const frequencyCopy =
+                        frequency === "monthly"
+                            ? `${amountCopy}/month`
+                            : amountCopy;
+                    message = `${frequencyCopy} donation is on its way. Thank you for supporting nuqta.'s mission.`;
+                } else if (state === "cancel") {
+                    eyebrow = "Donation canceled";
+                    tone = "cancel";
+                    message =
+                        "Your checkout was canceled. You can review the options and try again whenever you're ready.";
+                }
+
+                if (!message) {
+                    donationFeedback.classList.add("hidden");
+                    return;
+                }
+
+                donationFeedbackEyebrow.textContent = eyebrow;
+                donationFeedbackMessage.textContent = message;
+                donationFeedbackCard.dataset.tone = tone;
+                donationFeedback.classList.remove("hidden");
+            };
+
+            const updateDonationUI = () => {
+                const selectedAmount = getSelectedAmount();
+                const customAmount = getCustomAmount();
+                const hasValidAmount =
+                    Number.isInteger(selectedAmount) &&
+                    selectedAmount >= DONATION_MIN_AMOUNT;
+
+                donationFrequencyTriggers.forEach((trigger) => {
+                    const isActive =
+                        trigger.dataset.frequency === currentDonationFrequency;
+                    trigger.classList.toggle("is-active", isActive);
+                    trigger.setAttribute("aria-selected", String(isActive));
+                });
+
+                donationPanels.forEach((panel) => {
+                    const isActive =
+                        panel.dataset.frequency === currentDonationFrequency;
+                    panel.classList.toggle("is-active", isActive);
+                    panel.hidden = !isActive;
+
+                    panel
+                        .querySelectorAll(".donation-option")
+                        .forEach((optionButton) => {
+                            const optionAmount = Number.parseInt(
+                                optionButton.dataset.amount ?? "",
+                                10,
+                            );
+                            const isActiveOption =
+                                isActive &&
+                                customAmount === null &&
+                                optionAmount === selectedPresetAmount;
+                            optionButton.classList.toggle(
+                                "is-active",
+                                isActiveOption,
+                            );
+                            optionButton.setAttribute(
+                                "aria-pressed",
+                                String(isActiveOption),
+                            );
+                        });
+                });
+
+                if (donationSubmitButton) {
+                    const frequencyLabel =
+                        currentDonationFrequency === "monthly"
+                            ? "monthly"
+                            : "one-time";
+                    donationSubmitButton.disabled =
+                        !hasValidAmount || isDonationSubmitting;
+                    donationSubmitButton.textContent = isDonationSubmitting
+                        ? "Redirecting..."
+                        : hasValidAmount
+                          ? `Donate $${selectedAmount}${currentDonationFrequency === "monthly" ? "/mo" : ""}`
+                          : `Select a ${frequencyLabel} amount`;
+                }
+
+                if (donationSummary) {
+                    if (customAmount !== null && hasValidAmount) {
+                        donationSummary.textContent =
+                            currentDonationFrequency === "monthly"
+                                ? `You are giving $${customAmount} each month.`
+                                : `You are giving $${customAmount} one time.`;
+                    } else if (hasValidAmount) {
+                        donationSummary.textContent =
+                            currentDonationFrequency === "monthly"
+                                ? `You selected $${selectedAmount} per month.`
+                                : `You selected $${selectedAmount} as a one-time gift.`;
+                    } else {
+                        donationSummary.textContent =
+                            "Select a preset or enter another amount to continue to secure checkout.";
+                    }
+                }
+            };
+
+            const submitDonation = async () => {
+                const amount = getSelectedAmount();
+
+                if (
+                    !Number.isInteger(amount) ||
+                    amount < DONATION_MIN_AMOUNT
+                ) {
+                    setDonationError("Enter a valid donation amount to continue.");
+                    updateDonationUI();
+                    return;
+                }
+
+                setDonationError("");
+                isDonationSubmitting = true;
+                updateDonationUI();
+
+                try {
+                    const response = await fetch(DONATION_API_ENDPOINT, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            frequency: currentDonationFrequency,
+                            amount,
+                        }),
+                    });
+
+                    const payload = await response.json().catch(() => ({}));
+
+                    if (!response.ok || !payload.url) {
+                        throw new Error(
+                            payload.error ||
+                                "We couldn't start checkout right now. Please try again.",
+                        );
+                    }
+
+                    window.location.href = payload.url;
+                } catch (error) {
+                    isDonationSubmitting = false;
+                    setDonationError(
+                        error instanceof Error
+                            ? error.message
+                            : "We couldn't start checkout right now. Please try again.",
+                    );
+                    updateDonationUI();
+                }
+            };
+
+            const setDonationFrequency = (frequency) => {
+                currentDonationFrequency = frequency;
+                selectedPresetAmount = null;
+                if (donationOtherAmountInput) {
+                    donationOtherAmountInput.value = "";
+                }
+                setDonationError("");
+                updateDonationUI();
+            };
+
+            const openDonationModal = (trigger) => {
+                lastDonationTrigger = trigger;
+                donationModal.classList.remove("hidden");
+                donationModal.classList.add("is-open");
+                donationModal.setAttribute("aria-hidden", "false");
+                document.body.classList.add("modal-open");
+                currentDonationFrequency = "one-time";
+                selectedPresetAmount = null;
+                isDonationSubmitting = false;
+                if (donationOtherAmountInput) {
+                    donationOtherAmountInput.value = "";
+                }
+                setDonationError("");
+                updateDonationUI();
+                donationDialog?.focus();
+            };
+
+            const closeDonationModal = () => {
+                donationModal.classList.remove("is-open");
+                donationModal.classList.add("hidden");
+                donationModal.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("modal-open");
+                lastDonationTrigger?.focus();
+            };
+
+            renderDonationOptions();
+            updateDonationFeedback();
+            updateDonationUI();
+
+            donationTriggers.forEach((trigger) => {
+                trigger.addEventListener("click", () => openDonationModal(trigger));
+            });
+
+            donationCloseButtons.forEach((trigger) => {
+                trigger.addEventListener("click", closeDonationModal);
+            });
+
+            donationFrequencyTriggers.forEach((trigger) => {
+                trigger.addEventListener("click", () => {
+                    setDonationFrequency(trigger.dataset.frequency);
+                });
+            });
+
+            donationOtherAmountInput?.addEventListener("input", () => {
+                selectedPresetAmount = null;
+                setDonationError("");
+                updateDonationUI();
+            });
+
+            donationSubmitButton?.addEventListener("click", submitDonation);
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape" && donationModal?.classList.contains("is-open")) {
+                    closeDonationModal();
+                }
+            });
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.08 },
+            );
+            document
+                .querySelectorAll(".page-section")
+                .forEach((el) => observer.observe(el));
+        </script>
+    </body>
 </html>
