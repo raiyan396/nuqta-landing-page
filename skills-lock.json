@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "mobile-first-design": {
+      "source": "aj-geddes/useful-ai-prompts",
+      "sourceType": "github",
+      "computedHash": "a60a398d4958414691e16d820eef4784be3b1def2e04500b47c5836a67b56a9a"
+    }
+  }
+}

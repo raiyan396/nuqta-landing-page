@@ -319,21 +319,20 @@ summary:focus-visible {
     width: min(24rem, 100%);
     max-width: 100%;
     margin: 0;
-}
-
-.hero-subheading__svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: visible;
-}
-
-.hero-subheading__svg text {
     font-family: var(--font-heading);
-    font-size: 40px;
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
     font-weight: 400;
     letter-spacing: 0.015em;
-    fill: rgba(245, 239, 230, 0.94);
+    color: rgba(245, 239, 230, 0.94);
+    line-height: 1.1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    white-space: nowrap;
+}
+
+.hero-subheading__text {
+    display: block;
 }
 
 .hero-subheading__bold {
