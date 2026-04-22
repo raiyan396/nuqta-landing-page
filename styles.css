@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -25,6 +26,25 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+}
+
+.program-page,
+.program-page .nuqta-shell,
+.program-page main {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.support-hero-graphic {
+    transform-origin: center;
+}
+
+.support-hero-graphic--desktop {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.support-hero-graphic--mobile {
+    transform: rotate(90deg);
 }
 
 body::before {
@@ -173,8 +193,11 @@ summary:focus-visible {
 .eyebrow {
     font-family: "Anonymous Pro", monospace;
     font-size: 0.9rem;
+    font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    color: var(--nuqta-cream);
+    opacity: 1;
 }
 
 .editorial-title {
@@ -1238,7 +1261,14 @@ body {
     letter-spacing: 0.14em;
     font-size: clamp(1.02rem, 1.1vw, 1.16rem);
     line-height: 1.2;
-    color: var(--text-light-700);
+    font-weight: 600;
+    color: var(--nuqta-cream);
+    opacity: 1;
+}
+
+.eyebrow[class*="text-cream/"] {
+    color: var(--nuqta-cream);
+    opacity: 1;
 }
 
 .headline-all-caps,
@@ -1417,6 +1447,49 @@ p.text-cream\/66 {
 .deck-band--blue {
     background: inherit;
     border-color: inherit;
+}
+
+.sustain-band {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(11, 10, 9, 0.9) 0%,
+            rgba(11, 10, 9, 0.84) 40%,
+            rgba(11, 10, 9, 0.72) 62%,
+            rgba(11, 10, 9, 0.62) 100%
+        ),
+        radial-gradient(
+            circle at 78% 82%,
+            rgba(201, 140, 58, 0.18),
+            transparent 28%
+        );
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, 82% 88%;
+    background-size: auto, 28rem 28rem;
+}
+
+.sustain-band__content {
+    position: relative;
+    z-index: 2;
+}
+
+.sustain-band__overlay {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: clamp(26.4rem, 40.8vw, 45.6rem);
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.32;
+    background-image: url("assets/images/olive-tree.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translate(0, -50%) rotate(90deg);
+    transform-origin: center;
 }
 
 .statement-card {
@@ -1787,6 +1860,43 @@ p.text-cream\/66 {
     padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 
+.program-hero-illustration-frame {
+    overflow: visible;
+}
+
+.program-hero-illustration-frame--mobile {
+    overflow: hidden;
+    max-height: 14rem;
+}
+
+.program-hero-illustration {
+    display: block;
+    transform: rotate(90deg) scale(1.6);
+    transform-origin: center;
+}
+
+.program-hero-illustration--mobile {
+    transform: rotate(90deg);
+    margin-top: -3.25rem;
+    margin-bottom: -3.25rem;
+}
+
+@media (min-width: 640px) {
+    .program-hero-illustration {
+        transform: rotate(90deg) scale(1.35);
+    }
+
+    .program-hero-illustration--mobile {
+        transform: rotate(90deg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .program-hero-illustration {
+        transform: rotate(90deg) scale(1.9);
+    }
+}
+
 /* What is Nuqta carousel */
 .nuqta-carousel-section {
     background:
@@ -2013,6 +2123,15 @@ p.text-cream\/66 {
 @media (max-width: 767px) {
     .deck-band {
         border-radius: 0;
+    }
+
+    .sustain-band {
+        background-position: center, 88% 100%;
+        background-size: auto, 16rem 16rem;
+    }
+
+    .sustain-band__overlay {
+        display: none;
     }
 
     .solution-tree {
