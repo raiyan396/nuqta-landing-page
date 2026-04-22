@@ -328,7 +328,8 @@ summary:focus-visible {
     overflow: visible;
 }
 
-.hero-subheading__svg text {
+.hero-subheading__lead,
+.hero-subheading__bold {
     font-family: var(--font-heading);
     font-size: 40px;
     font-weight: 400;
