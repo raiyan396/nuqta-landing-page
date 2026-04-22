@@ -129,12 +129,7 @@
                             alt="Nuqta"
                             class="hero-logo"
                         />
-                        <h1 class="hero-subheading" aria-label="you were made for more.">
-                            <svg class="hero-subheading__svg" viewBox="0 0 456 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <text class="hero-subheading__lead" x="0" y="36">you were made for</text>
-                                <text class="hero-subheading__bold" x="0" y="36">more.</text>
-                            </svg>
-                        </h1>
+                        <h1 class="hero-subheading">you were made for <strong>more.</strong></h1>
                     </div>
                     <div class="hero-bottom">
                         <p class="hero-blurb">BEGIN</p>
@@ -317,37 +312,6 @@
             document
                 .querySelectorAll(".page-section")
                 .forEach((el) => observer.observe(el));
-
-            function fitHeroSubheading() {
-                const heroSubheadingSvg = document.querySelector(".hero-subheading__svg");
-                const heroSubheadingLead = heroSubheadingSvg?.querySelector(".hero-subheading__lead");
-                const heroSubheadingBold = heroSubheadingSvg?.querySelector(".hero-subheading__bold");
-                if (!heroSubheadingSvg || !heroSubheadingLead || !heroSubheadingBold) return;
-
-                const leadWidth = heroSubheadingLead.getComputedTextLength();
-                const gap = Math.max(4, leadWidth * 0.018);
-                heroSubheadingBold.setAttribute("x", `${leadWidth + gap}`);
-
-                const leadBounds = heroSubheadingLead.getBBox();
-                const boldBounds = heroSubheadingBold.getBBox();
-                const minX = Math.min(leadBounds.x, boldBounds.x);
-                const minY = Math.min(leadBounds.y, boldBounds.y);
-                const maxX = Math.max(leadBounds.x + leadBounds.width, boldBounds.x + boldBounds.width);
-                const maxY = Math.max(leadBounds.y + leadBounds.height, boldBounds.y + boldBounds.height);
-                const padding = 1;
-                heroSubheadingSvg.setAttribute(
-                    "viewBox",
-                    `${minX - padding} ${minY - padding} ${maxX - minX + padding * 2} ${maxY - minY + padding * 2}`,
-                );
-            }
-
-            if (document.fonts?.ready) {
-                document.fonts.ready.then(fitHeroSubheading);
-            } else {
-                window.addEventListener("load", fitHeroSubheading, { once: true });
-            }
-
-            window.addEventListener("resize", fitHeroSubheading);
         </script>
     </body>
 </html>

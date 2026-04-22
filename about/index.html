@@ -604,6 +604,10 @@
                     currentSpeed = 0;
                     offset = 0;
                     lastTime = 0;
+                    viewport.scrollTo({
+                        left: 0,
+                        behavior: "auto",
+                    });
                     updateMobileDot();
                 };
 

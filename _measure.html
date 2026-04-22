@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>measure</title></head>
+<body>
+<iframe id="f" src="http://127.0.0.1:8765/index.html" style="border:0"></iframe>
+<pre id="out"></pre>
+<script>
+const viewport = new URLSearchParams(location.search).get('w') || '1440';
+const f = document.getElementById('f');
+f.style.width = viewport + 'px';
+f.style.height = '900px';
+f.addEventListener('load', () => {
+  setTimeout(() => {
+    const doc = f.contentDocument;
+    const logo = doc.querySelector('.hero-logo');
+    const tag = doc.querySelector('.hero-subheading');
+    const logoR = logo.getBoundingClientRect();
+    const tagR = tag.getBoundingClientRect();
+    const range = doc.createRange();
+    range.selectNodeContents(tag);
+    const tagTextR = range.getBoundingClientRect();
+    const fs = f.contentWindow.getComputedStyle(tag).fontSize;
+    document.getElementById('out').textContent =
+      'viewport=' + viewport + 'px\n' +
+      'logo container width=' + logoR.width.toFixed(2) + '\n' +
+      'tagline container width=' + tagR.width.toFixed(2) + '\n' +
+      'tagline text width=' + tagTextR.width.toFixed(2) + '\n' +
+      'tagline text overflows container: ' + (tagTextR.width > tagR.width + 0.5) + '\n' +
+      'tagline font-size=' + fs + '\n' +
+      'delta (logo - tagline text)=' + (logoR.width - tagTextR.width).toFixed(2) + 'px';
+  }, 2000);
+});
+</script>
+</body>
+</html>
