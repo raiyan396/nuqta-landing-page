@@ -1477,7 +1477,7 @@ p.text-cream\/66 {
 
 .sustain-band__overlay {
     position: absolute;
-    top: 50%;
+    top: 56%;
     right: 0;
     width: clamp(26.4rem, 40.8vw, 45.6rem);
     aspect-ratio: 1 / 1;
@@ -2061,13 +2061,13 @@ p.text-cream\/66 {
     border-top: 1px solid rgba(243, 232, 214, 0.08);
     border-bottom: 1px solid rgba(243, 232, 214, 0.08);
     background:
-        linear-gradient(180deg, rgba(18, 14, 10, 0.18) 0%, rgba(16, 12, 8, 0.26) 100%),
+        linear-gradient(180deg, rgba(18, 14, 10, 0.28) 0%, rgba(16, 12, 8, 0.36) 100%),
         radial-gradient(circle at 14% 12%, rgba(212, 166, 101, 0.14), transparent 34%),
         radial-gradient(circle at 84% 76%, rgba(255, 236, 214, 0.08), transparent 30%),
         url("assets/backgrounds/2-web.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto, auto, auto, auto 100%;
+    background-size: auto, auto, auto, cover;
     overflow: hidden;
 }
 
@@ -2290,8 +2290,28 @@ p.text-cream\/66 {
     border: 0;
 }
 
+.founder-feature__image--placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(246, 244, 241, 0.7);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.founder-feature__image--placeholder span {
+    text-align: center;
+}
+
 .founder-feature__image--top {
     object-position: top center;
+}
+
+.founder-feature__image--raiyan {
+    object-position: center 52%;
 }
 
 .nuqta-is-section {
