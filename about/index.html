@@ -720,9 +720,15 @@
                     if (desktopQuery.matches) {
                         return cards;
                     }
+                    const all = Array.from(cards[0]?.parentNode?.children ?? []);
                     return cards
                         .slice()
-                        .sort((left, right) => left.offsetLeft - right.offsetLeft);
+                        .sort((left, right) => {
+                            const orderA = parseInt(window.getComputedStyle(left).order) || 0;
+                            const orderB = parseInt(window.getComputedStyle(right).order) || 0;
+                            if (orderA !== orderB) return orderA - orderB;
+                            return all.indexOf(left) - all.indexOf(right);
+                        });
                 };
 
                 const getMobileInitialIndex = () => 0;
@@ -733,10 +739,7 @@
                     if (!target) {
                         return;
                     }
-                    viewport.scrollTo({
-                        left: target.offsetLeft,
-                        behavior,
-                    });
+                    target.scrollIntoView({ behavior, block: "nearest", inline: "start" });
                 };
 
                 const syncClones = () => {
