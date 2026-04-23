@@ -2034,12 +2034,8 @@ p.text-cream\/66 {
         scroll-snap-align: start;
     }
 
-    .nuqta-polaroid:nth-child(2) {
-        order: -1;
-    }
-
     .nuqta-polaroid:nth-child(1) {
-        order: 1;
+        order: 5;
     }
 
     .nuqta-carousel__dots {
@@ -2269,6 +2265,31 @@ p.text-cream\/66 {
 }
 
 .vision-mission-section {
+    background: transparent;
+    border: 0;
+}
+
+.about-intro-group {
+    position: relative;
+    isolation: isolate;
+}
+
+.about-intro-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(rgba(8, 20, 24, 0.48), rgba(8, 20, 24, 0.48)),
+        url('assets/backgrounds/intro-bg-web.jpg');
+    background-size: auto, cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.about-intro-section {
+    position: relative;
+    z-index: 1;
     background: transparent;
     border: 0;
 }

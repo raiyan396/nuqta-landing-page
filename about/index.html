@@ -250,7 +250,7 @@
                     >
                         <div class="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
                             <div class="max-w-5xl space-y-6">
-                                <p class="eyebrow text-cream/55">gap</p>
+                                <p class="eyebrow text-cream/55">the gap</p>
                                 <h1 class="editorial-title max-w-5xl text-cream text-[clamp(2.7rem,5.2vw,5rem)]">
                                     <span class="mb-[0.5em] block font-normal">Muslim youth are not lacking <em>passion.</em></span>
                                     <span class="block">They are lacking <em>structure</em> and consistent guidance.</span>
@@ -449,8 +449,12 @@
                             </p>
                         </div>
                     </section>
+                </div>
 
-                    <section class="page-section vision-mission-section mx-auto mt-5 max-w-7xl px-4 py-14 sm:px-10 lg:px-14 lg:py-20">
+                <div class="about-intro-group">
+                    <div class="about-intro-bg" aria-hidden="true"></div>
+
+                    <section class="page-section about-intro-section mx-auto max-w-7xl px-4 py-14 sm:px-10 lg:px-14 lg:py-20">
                         <p class="eyebrow text-cream/60">Founders and Advisors</p>
                         <div class="mt-8 space-y-16">
                             <article class="founder-feature">
@@ -641,7 +645,7 @@
                             <div>
                                 <p class="eyebrow text-cream/58">Contact</p>
                                 <div class="mt-4 space-y-3 text-sm text-cream/76">
-                                    <p>EMAIL_ADDRESS</p>
+                                    <a href="mailto:connect.nuqta@gmail.com">connect.nuqta@gmail.com</a>
                                     <p>Est. 2026</p>
                                 </div>
                             </div>
@@ -719,6 +723,20 @@
                     return cards
                         .slice()
                         .sort((left, right) => left.offsetLeft - right.offsetLeft);
+                };
+
+                const getMobileInitialIndex = () => 0;
+
+                const scrollMobileToCard = (index, behavior = "auto") => {
+                    const cards = getCardsInVisualOrder();
+                    const target = cards[index];
+                    if (!target) {
+                        return;
+                    }
+                    viewport.scrollTo({
+                        left: target.offsetLeft,
+                        behavior,
+                    });
                 };
 
                 const syncClones = () => {
@@ -811,11 +829,12 @@
                     currentSpeed = 0;
                     offset = 0;
                     lastTime = 0;
-                    viewport.scrollTo({
-                        left: 0,
-                        behavior: "auto",
+                    const initialIndex = getMobileInitialIndex();
+                    scrollMobileToCard(initialIndex);
+                    window.requestAnimationFrame(() => {
+                        scrollMobileToCard(initialIndex);
+                        setActiveDot(initialIndex);
                     });
-                    updateMobileDot();
                 };
 
                 const refreshMode = () => {
@@ -866,15 +885,7 @@
                             return;
                         }
                         const index = Number(dot.dataset.dotIndex || "0");
-                        const cards = getCardsInVisualOrder();
-                        const target = cards[index];
-                        if (!target) {
-                            return;
-                        }
-                        viewport.scrollTo({
-                            left: target.offsetLeft,
-                            behavior: "smooth",
-                        });
+                        scrollMobileToCard(index, "smooth");
                         setActiveDot(index);
                     });
                 });
