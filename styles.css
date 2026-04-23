@@ -1995,6 +1995,10 @@ p.text-cream\/66 {
     display: none;
 }
 
+[data-mobile-carousel]:not(.is-ready) {
+    opacity: 0;
+}
+
 @media (max-width: 1023px) {
     .nuqta-carousel-section {
         padding: 0.9rem 0 1.15rem;
@@ -2045,6 +2049,7 @@ p.text-cream\/66 {
     [data-mobile-carousel] {
         display: flex;
         flex-direction: column;
+        transition: opacity 0.18s ease;
     }
 
     .nuqta-carousel__dots {

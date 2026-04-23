@@ -165,9 +165,11 @@
                                     <img
                                         src="../assets/images/what-is-nuqta/WIN.png"
                                         alt="WIN post highlighting nuqta.'s youth impact."
-                                        loading="lazy"
+                                        loading="eager"
+                                        fetchpriority="high"
                                         decoding="async"
                                         class="nuqta-polaroid__image"
+                                        data-mobile-first-image
                                     />
                                 </article>
                                 <article class="nuqta-polaroid nuqta-polaroid--tilt-left">
@@ -955,6 +957,7 @@
             if (mobileCarouselRoot) {
                 const mobileViewport = mobileCarouselRoot.querySelector("[data-mobile-viewport]");
                 const mobileDots = Array.from(mobileCarouselRoot.querySelectorAll("[data-dot-index]"));
+                const firstMobileImage = mobileCarouselRoot.querySelector("[data-mobile-first-image]");
 
                 const setMobileActiveDot = (index) => {
                     mobileDots.forEach((dot, i) => {
@@ -964,6 +967,25 @@
                         else dot.removeAttribute("aria-current");
                     });
                 };
+
+                const revealMobileCarousel = () => {
+                    mobileViewport.scrollTo({ left: 0, behavior: "auto" });
+                    window.requestAnimationFrame(() => {
+                        mobileViewport.scrollTo({ left: 0, behavior: "auto" });
+                        setMobileActiveDot(0);
+                        mobileCarouselRoot.classList.add("is-ready");
+                    });
+                };
+
+                mobileCarouselRoot.classList.remove("is-ready");
+                if (firstMobileImage?.complete) {
+                    revealMobileCarousel();
+                } else if (firstMobileImage) {
+                    firstMobileImage.addEventListener("load", revealMobileCarousel, { once: true });
+                    firstMobileImage.addEventListener("error", revealMobileCarousel, { once: true });
+                } else {
+                    revealMobileCarousel();
+                }
 
                 mobileViewport.addEventListener("scroll", () => {
                     const index = Math.round(mobileViewport.scrollLeft / Math.max(mobileViewport.clientWidth, 1));
