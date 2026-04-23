@@ -158,6 +158,64 @@
                                 <button type="button" class="nuqta-carousel__dot" data-dot-index="4" aria-label="Go to slide 5"></button>
                             </div>
                     </div>
+                    <div class="nuqta-carousel" data-mobile-carousel>
+                        <div class="nuqta-carousel__viewport" data-mobile-viewport>
+                            <div class="nuqta-carousel__track">
+                                <article class="nuqta-polaroid nuqta-polaroid--tilt-right">
+                                    <img
+                                        src="../assets/images/what-is-nuqta/WIN.png"
+                                        alt="WIN post highlighting nuqta.'s youth impact."
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="nuqta-polaroid__image"
+                                    />
+                                </article>
+                                <article class="nuqta-polaroid nuqta-polaroid--tilt-left">
+                                    <img
+                                        src="../assets/images/what-is-nuqta/mentorship.png"
+                                        alt="Mentorship moments at nuqta. youth programming."
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="nuqta-polaroid__image"
+                                    />
+                                </article>
+                                <article class="nuqta-polaroid nuqta-polaroid--tilt-left">
+                                    <img
+                                        src="../assets/images/what-is-nuqta/suhbah.png"
+                                        alt="Suhbah post showing community and belonging."
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="nuqta-polaroid__image"
+                                    />
+                                </article>
+                                <article class="nuqta-polaroid nuqta-polaroid--tilt-right-soft">
+                                    <img
+                                        src="../assets/images/what-is-nuqta/leadership.png"
+                                        alt="Leadership post showing youth development focus."
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="nuqta-polaroid__image"
+                                    />
+                                </article>
+                                <article class="nuqta-polaroid nuqta-polaroid--tilt-left-soft">
+                                    <img
+                                        src="../assets/images/what-is-nuqta/nuqta-is.png"
+                                        alt="nuqta. is post describing mission and identity."
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="nuqta-polaroid__image"
+                                    />
+                                </article>
+                            </div>
+                        </div>
+                        <div class="nuqta-carousel__dots" aria-label="What is nuqta. slides">
+                            <button type="button" class="nuqta-carousel__dot is-active" data-dot-index="0" aria-label="Go to slide 1" aria-current="true"></button>
+                            <button type="button" class="nuqta-carousel__dot" data-dot-index="1" aria-label="Go to slide 2"></button>
+                            <button type="button" class="nuqta-carousel__dot" data-dot-index="2" aria-label="Go to slide 3"></button>
+                            <button type="button" class="nuqta-carousel__dot" data-dot-index="3" aria-label="Go to slide 4"></button>
+                            <button type="button" class="nuqta-carousel__dot" data-dot-index="4" aria-label="Go to slide 5"></button>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="page-section survey-story-section">
@@ -891,6 +949,34 @@
                 }
 
                 refreshMode();
+            }
+
+            const mobileCarouselRoot = document.querySelector("[data-mobile-carousel]");
+            if (mobileCarouselRoot) {
+                const mobileViewport = mobileCarouselRoot.querySelector("[data-mobile-viewport]");
+                const mobileDots = Array.from(mobileCarouselRoot.querySelectorAll("[data-dot-index]"));
+
+                const setMobileActiveDot = (index) => {
+                    mobileDots.forEach((dot, i) => {
+                        const active = i === index;
+                        dot.classList.toggle("is-active", active);
+                        if (active) dot.setAttribute("aria-current", "true");
+                        else dot.removeAttribute("aria-current");
+                    });
+                };
+
+                mobileViewport.addEventListener("scroll", () => {
+                    const index = Math.round(mobileViewport.scrollLeft / Math.max(mobileViewport.clientWidth, 1));
+                    setMobileActiveDot(Math.min(index, mobileDots.length - 1));
+                }, { passive: true });
+
+                mobileDots.forEach((dot) => {
+                    dot.addEventListener("click", () => {
+                        const index = Number(dot.dataset.dotIndex || "0");
+                        mobileViewport.scrollTo({ left: index * mobileViewport.clientWidth, behavior: "smooth" });
+                        setMobileActiveDot(index);
+                    });
+                });
             }
         </script>
     </body>

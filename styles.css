@@ -1991,6 +1991,10 @@ p.text-cream\/66 {
     transform: none;
 }
 
+[data-mobile-carousel] {
+    display: none;
+}
+
 @media (max-width: 1023px) {
     .nuqta-carousel-section {
         padding: 0.9rem 0 1.15rem;
@@ -2034,8 +2038,13 @@ p.text-cream\/66 {
         scroll-snap-align: start;
     }
 
-    .nuqta-polaroid:nth-child(1) {
-        order: 5;
+    [data-nuqta-carousel] {
+        display: none;
+    }
+
+    [data-mobile-carousel] {
+        display: flex;
+        flex-direction: column;
     }
 
     .nuqta-carousel__dots {
