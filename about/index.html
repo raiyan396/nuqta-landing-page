@@ -734,12 +734,7 @@
                 const getMobileInitialIndex = () => 0;
 
                 const scrollMobileToCard = (index, behavior = "auto") => {
-                    const cards = getCardsInVisualOrder();
-                    const target = cards[index];
-                    if (!target) {
-                        return;
-                    }
-                    target.scrollIntoView({ behavior, block: "nearest", inline: "start" });
+                    viewport.scrollTo({ left: index * viewport.clientWidth, behavior });
                 };
 
                 const syncClones = () => {
@@ -795,17 +790,8 @@
                     if (desktopQuery.matches) {
                         return;
                     }
-                    const cards = getCardsInVisualOrder();
-                    let nearestIndex = 0;
-                    let smallestDelta = Number.POSITIVE_INFINITY;
-                    cards.forEach((card, index) => {
-                        const delta = Math.abs(card.offsetLeft - viewport.scrollLeft);
-                        if (delta < smallestDelta) {
-                            smallestDelta = delta;
-                            nearestIndex = index;
-                        }
-                    });
-                    setActiveDot(nearestIndex);
+                    const nearestIndex = Math.round(viewport.scrollLeft / Math.max(viewport.clientWidth, 1));
+                    setActiveDot(Math.min(nearestIndex, dots.length - 1));
                 };
 
                 const enableDesktop = () => {
