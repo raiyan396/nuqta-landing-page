@@ -175,6 +175,7 @@
                             </div>
                         </div>
                         <a
+                            id="whatsapp-community-link"
                             href="https://chat.whatsapp.com/F3q4JhbgwoqCJRkQQs0wG4"
                             target="_blank"
                             rel="noreferrer"
@@ -241,6 +242,16 @@
         <script src="https://unpkg.com/lucide@latest"></script>
         <script>
             lucide.createIcons();
+
+            const whatsappCommunityLink = document.getElementById(
+                "whatsapp-community-link",
+            );
+            if (whatsappCommunityLink) {
+                whatsappCommunityLink.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    window.open(whatsappCommunityLink.href, "_blank", "noopener");
+                });
+            }
 
             const observer = new IntersectionObserver(
                 (entries) => {
