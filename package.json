@@ -1,0 +1,13 @@
+{
+  "name": "nuqta-landing-page",
+  "version": "1.0.0",
+  "description": "nuqta. landing page - Mentorship-driven ecosystem for Muslim youth",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Static HTML site - open index.html in browser'",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
