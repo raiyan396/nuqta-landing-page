@@ -26,7 +26,7 @@ function loadRenderer() {
     return context.window.NuqtaPrograms;
 }
 
-test("partitions featured, future, expired, and evergreen programs", () => {
+test("partitions featured, future, expired, and recurring programs", () => {
     const renderer = loadRenderer();
     const now = new Date("2026-05-08T12:00:00-04:00");
     const programs = [
@@ -74,7 +74,7 @@ test("partitions featured, future, expired, and evergreen programs", () => {
         ["Featured future event", "Standard future event", "Date coming soon"],
     );
     assert.deepEqual(
-        result.evergreen.map((program) => program.title),
+        result.recurring.map((program) => program.title),
         ["MSA ROOTS"],
     );
 });

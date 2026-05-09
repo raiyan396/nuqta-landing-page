@@ -1,7 +1,7 @@
 (function (global) {
     "use strict";
 
-    const RECURRING_TYPES = new Set(["recurring", "evergreen"]);
+    const RECURRING_TYPES = new Set(["recurring"]);
     const PLACEHOLDER_IMAGE = "../assets/images/what-is-nuqta/suhbah.png";
 
     const PROGRAMS_QUERY = `*[
@@ -26,6 +26,7 @@
         partners,
         givebutterUrl,
         ctaLabel,
+        isPublished,
         featured
     }`;
 
@@ -76,11 +77,11 @@
             .filter((program) => !isRecurringProgram(program))
             .sort(sortByFeaturedThenDate);
 
-        const evergreen = visible
+        const recurring = visible
             .filter(isRecurringProgram)
             .sort(sortByFeaturedThenDate);
 
-        return { upcoming, evergreen };
+        return { upcoming, recurring };
     }
 
     function getConfig() {
@@ -200,7 +201,6 @@
 
     function getProgramLabel(program) {
         if (program.programType === "recurring") return "Recurring";
-        if (program.programType === "evergreen") return "Evergreen";
         return "Upcoming";
     }
 
@@ -239,7 +239,7 @@
             });
 
         const meta = createElement("dl", "program-meta-grid");
-        if (!options.evergreen) {
+        if (!options.recurring) {
             appendIfPresent(
                 meta,
                 renderMetaItem("Date", formatEventDateRange(program.startDate, program.endDate)),
@@ -302,29 +302,29 @@
 
     function renderPrograms(programs, now = new Date()) {
         const upcomingList = global.document.querySelector("[data-program-upcoming]");
-        const evergreenList = global.document.querySelector("[data-program-evergreen]");
-        const evergreenSection = global.document.querySelector("[data-program-evergreen-section]");
+        const recurringList = global.document.querySelector("[data-program-recurring]");
+        const recurringSection = global.document.querySelector("[data-program-recurring-section]");
         const emptyState = global.document.querySelector("[data-program-empty]");
         const loadingState = global.document.querySelector("[data-program-loading]");
 
-        if (!upcomingList || !evergreenList || !emptyState || !evergreenSection) {
+        if (!upcomingList || !recurringList || !emptyState || !recurringSection) {
             return;
         }
 
-        const { upcoming, evergreen } = partitionPrograms(programs, now);
+        const { upcoming, recurring } = partitionPrograms(programs, now);
 
         replaceChildren(
             upcomingList,
             upcoming.map((program) => renderProgramCard(program)),
         );
         replaceChildren(
-            evergreenList,
-            evergreen.map((program) => renderProgramCard(program, { evergreen: true })),
+            recurringList,
+            recurring.map((program) => renderProgramCard(program, { recurring: true })),
         );
 
         upcomingList.hidden = upcoming.length === 0;
         emptyState.hidden = upcoming.length > 0;
-        evergreenSection.hidden = evergreen.length === 0;
+        recurringSection.hidden = recurring.length === 0;
         if (loadingState) loadingState.hidden = true;
     }
 

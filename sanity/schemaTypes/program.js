@@ -3,7 +3,6 @@ import { defineField, defineType } from "sanity";
 const programTypes = [
     { title: "One-time event", value: "event" },
     { title: "Recurring program", value: "recurring" },
-    { title: "Evergreen program", value: "evergreen" },
 ];
 
 export const program = defineType({
@@ -90,7 +89,7 @@ export const program = defineType({
             type: "datetime",
             group: "schedule",
             description:
-                "Required for one-time events. Leave blank only for recurring or evergreen programs.",
+                "Required for one-time events. Leave blank only for recurring programs.",
         }),
         defineField({
             name: "endDate",
@@ -159,6 +158,15 @@ export const program = defineType({
                     { title: "Learn More", value: "Learn More" },
                 ],
             },
+        }),
+        defineField({
+            name: "isPublished",
+            title: "Show on website",
+            type: "boolean",
+            group: "publishing",
+            description:
+                "Turn this off to hide the program from the public page without unpublishing it.",
+            initialValue: true,
         }),
         defineField({
             name: "featured",

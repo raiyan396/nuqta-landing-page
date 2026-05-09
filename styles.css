@@ -1842,7 +1842,7 @@ p.text-cream\/66 {
 }
 
 .program-empty__title,
-.program-evergreen__title {
+.program-recurring__title {
     margin: 0.8rem 0 0;
     color: #f6f4f1;
     font-family: var(--font-heading);
@@ -1863,7 +1863,7 @@ p.text-cream\/66 {
     margin-top: 1.4rem;
 }
 
-.program-evergreen__title {
+.program-recurring__title {
     max-width: 52rem;
 }
 
