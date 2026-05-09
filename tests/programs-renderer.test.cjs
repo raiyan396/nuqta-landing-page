@@ -26,7 +26,7 @@ function loadRenderer() {
     return context.window.NuqtaPrograms;
 }
 
-test("partitions featured, future, expired, and recurring programs", () => {
+test("partitions featured, future, expired, and ongoing programs", () => {
     const renderer = loadRenderer();
     const now = new Date("2026-05-08T12:00:00-04:00");
     const programs = [

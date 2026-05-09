@@ -27,8 +27,7 @@ signups. Google Forms, Givebutter, and other HTTPS registration links all work.
 2. Add the title, then generate the slug from the title.
 3. Choose the program type:
    - `One-time event` for dated events that should appear in Upcoming programs.
-   - `Recurring program` for items that should appear in Ongoing spaces below
-     upcoming events.
+   - `Ongoing space` for items that should appear below upcoming events.
 4. Add a short summary. Add the full description if the card needs more detail.
 5. Add optional details such as location, audience, fee, partners, and deadline.
 
@@ -58,6 +57,6 @@ collect or manage registrations directly.
 - To let the page hide it automatically, set `Expiration date/time`. If that is
   blank, the page uses `End date/time`, then `Start date/time`.
 
-Expired one-time events do not appear on the public page. Recurring programs
-only appear below upcoming events when their program type is explicitly set to
-`Recurring program`.
+Expired one-time events do not appear on the public page. Ongoing spaces only
+appear below upcoming events when their program type is explicitly set to
+`Ongoing space`.

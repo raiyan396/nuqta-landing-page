@@ -1841,8 +1841,7 @@ p.text-cream\/66 {
     padding: clamp(1.2rem, 3vw, 2rem);
 }
 
-.program-empty__title,
-.program-recurring__title {
+.program-empty__title {
     margin: 0.8rem 0 0;
     color: #f6f4f1;
     font-family: var(--font-heading);
@@ -1861,10 +1860,6 @@ p.text-cream\/66 {
 
 .program-empty__cta {
     margin-top: 1.4rem;
-}
-
-.program-recurring__title {
-    max-width: 52rem;
 }
 
 @media (min-width: 760px) {

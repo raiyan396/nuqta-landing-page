@@ -200,7 +200,7 @@
     }
 
     function getProgramLabel(program) {
-        if (program.programType === "recurring") return "Recurring";
+        if (program.programType === "recurring") return "Ongoing";
         return "Upcoming";
     }
 

@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 const programTypes = [
   {title: 'One-time event', value: 'event'},
-  {title: 'Recurring program', value: 'recurring'},
+  {title: 'Ongoing space', value: 'recurring'},
 ]
 
 export const program = defineType({
@@ -89,7 +89,7 @@ export const program = defineType({
       type: 'datetime',
       group: 'schedule',
       description:
-        'Required for one-time events. Leave blank only for recurring programs.',
+        'Required for one-time events. Leave blank only for ongoing spaces.',
     }),
     defineField({
       name: 'endDate',
